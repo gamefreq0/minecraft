@@ -30,5 +30,7 @@
 			#Allowed Values: PRESET_FIRST, RANDOM_ONLY, PRESET_ONLY, MIXED
 			nameGenerationMode = "PRESET_FIRST"
 			#These names will be used for the PRESET name generation mode. See the nameGenerationMode option for more info.
-			customWaystoneNames = []
+            customWaystoneNames = [
+
+            ]
 
