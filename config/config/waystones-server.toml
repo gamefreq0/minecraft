@@ -20,10 +20,10 @@
 	[server.waystoneToWaystone]
 		#The multiplier applied to the base xp cost when teleporting from one waystone to another.
 		#Range: 0.0 ~ Infinity
-		waystoneXpCostMultiplier = 1.0
+		waystoneXpCostMultiplier = 0.0
 		#The multiplier applied to the base xp cost when teleporting from one sharestone to another.
 		#Range: 0.0 ~ Infinity
-		sharestoneXpCostMultiplier = 1.0
+		sharestoneXpCostMultiplier = 0.0
 		#The multiplier applied to the base xp cost when teleporting from a portstone.
 		#Range: 0.0 ~ Infinity
 		portstoneXpCostMultiplier = 0.0
