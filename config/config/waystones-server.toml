@@ -89,9 +89,9 @@
 	#These options apply to taking leashed mobs with you when teleporting.
 	[server.leashedMobs]
 		#If enabled, leashed mobs/animals will be teleported with you
-		transportLeashed = true
+		transportLeashed = false
 		#Take animals with you when travelling between dimensions
-		transportLeashedDimensional = true
+		transportLeashedDimensional = false
 		#How much xp is need per leashed animal to travel with you
 		#Range: > 0
 		costPerLeashed = 1
