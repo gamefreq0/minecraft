@@ -69,7 +69,50 @@
 		#$N can be omitted, in this case it is implied that the item has the light value of 15
 		#If the player is holding two items specified in this list (one in each hand), their light values are summed
 		#Stack size does not participate in calculations
-		shiny_items = ["minecraft:beacon$8", "minecraft:conduit$8", "minecraft:glowstone$8", "minecraft:jack_o_lantern$8", "minecraft:lantern$8", "minecraft:soul_lantern$5", "minecraft:sea_lantern$8", "minecraft:shroomlight$8", "minecraft:glow_berries$3", "minecraft:end_rod$7", "minecraft:torch$7", "minecraft:crying_obsidian$5", "minecraft:enchanting_table$4", "minecraft:ender_chest$4", "minecraft:glow_lichen$4", "minecraft:redstone_torch$2", "minecraft:small_amethyst_bud$1", "minecraft:medium_amethyst_bud$1", "minecraft:large_amethyst_bud$2", "minecraft:amethyst_cluster$3", "minecraft:magma_block$2", "minecraft:brewing_stand$1", "minecraft:brown_mushroom$1", "minecraft:dragon_egg$1", "minecraft:end_portal_frame$1", "minecraft:light$8", "minecraft:ender_pearl$1", "minecraft:ender_eye$1", "minecraft:experience_bottle$1", "minecraft:redstone$1", "minecraft:lava_bucket$8", "minecraft:spectral_arrow$3", "minecraft:enchanted_golden_apple$3", "minecraft:glow_ink_sac$2", "minecraft:amethyst_shard$1", "minecraft:nether_star$8", "minecraft:glistering_melon_slice$2", "minecraft:glowstone_dust$4", "minecraft:blaze_powder$1", "minecraft:blaze_rod$1", "minecraft:magma_cream$1"]
+		shiny_items = [
+            "minecraft:amethyst_cluster$3",
+            "minecraft:amethyst_shard$1",
+            "minecraft:beacon$8",
+            "minecraft:blaze_powder$1",
+            "minecraft:blaze_rod$1",
+            "minecraft:brewing_stand$1",
+            "minecraft:brown_mushroom$1",
+            "minecraft:conduit$8",
+            "minecraft:crying_obsidian$5",
+            "minecraft:dragon_egg$1",
+            "minecraft:enchanted_golden_apple$3",
+            "minecraft:enchanting_table$4",
+            "minecraft:end_portal_frame$1",
+            "minecraft:end_rod$7",
+            "minecraft:ender_chest$4",
+            "minecraft:ender_eye$1",
+            "minecraft:ender_pearl$1",
+            "minecraft:experience_bottle$1",
+            "minecraft:glistering_melon_slice$2",
+            "minecraft:glow_berries$3",
+            "minecraft:glow_ink_sac$2",
+            "minecraft:glow_lichen$4",
+            "minecraft:glowstone$8",
+            "minecraft:glowstone_dust$4",
+            "minecraft:jack_o_lantern$8",
+            "minecraft:lantern$8",
+            "minecraft:large_amethyst_bud$2",
+            "minecraft:lava_bucket$8",
+            "minecraft:light$8",
+            "minecraft:magma_block$2",
+            "minecraft:magma_cream$1",
+            "minecraft:medium_amethyst_bud$1",
+            "minecraft:nether_star$8",
+            "minecraft:redstone$1",
+            "minecraft:redstone_torch$2",
+            "minecraft:sea_lantern$8",
+            "minecraft:shroomlight$8",
+            "minecraft:small_amethyst_bud$1",
+            "minecraft:soul_lantern$5",
+            "minecraft:spectral_arrow$3",
+            "minecraft:torch$7",
+        ]
+        
 		#
 		#Any additional effects to apply to a player
 		#An effect should be included as follows: "effect_registry_name[duration=A][level=B][timing=C]"
