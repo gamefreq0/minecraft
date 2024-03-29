@@ -84,7 +84,7 @@
 		dimensionalWarp = "ALLOW"
 		#The base xp level cost when travelling between dimensions. Ignores block distance.
 		#Range: > 0
-		dimensionalWarpXpCost = 3
+		dimensionalWarpXpCost = 0
 
 	#These options apply to taking leashed mobs with you when teleporting.
 	[server.leashedMobs]
