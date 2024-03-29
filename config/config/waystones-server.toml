@@ -105,5 +105,5 @@
 		#If enabled, only creative players can place, edit or break waystones. This does NOT disable the crafting recipe.
 		restrictToCreative = true
 		#If enabled, waystones generated in worldgen are unbreakable.
-		generatedWaystonesUnbreakable = false
+		generatedWaystonesUnbreakable = true
 
