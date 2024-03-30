@@ -1,5 +1,6 @@
 # Yes, this is the master.
 import crafttweaker.api.item.IItemStack;
+import crafttweaker.api.recipe.Replacer;
 
 import mods.botania.ElvenTrade;
 import mods.botania.ManaInfusion;
@@ -40,6 +41,16 @@ function gRemove(_item as IItemStack) as void
     <recipetype:create:pressing>.removeRecipe(_item);
     <recipetype:create:sandpaper_polishing>.removeRecipe(_item);
     <recipetype:create:splashing>.removeRecipe(_item);
+}
+
+function gReplaceQueue(_from as IItemStack, _to as IItemStack) as void
+{
+    Replacer.forEverything().replace(_from,_to);
+}
+
+function gReplaceCommit() as void
+{
+    Replacer.forEverything().execute();
 }
 
 function gRemoveList(_items as IItemStack[]) as void
