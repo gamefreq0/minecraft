@@ -1,6 +1,7 @@
 # Yes, this is the master.
 import crafttweaker.api.item.IItemStack;
 import crafttweaker.api.recipe.Replacer;
+import crafttweaker.api.util.text.MCTextComponent;
 
 import mods.botania.ElvenTrade;
 import mods.botania.ManaInfusion;
@@ -92,12 +93,14 @@ function gRemoveAndHideList(_items as IItemStack[]) as void
     }
 }
 
-function gDescriptiveText(_item as IItemStack, _text as String) as void
+function gDescriptiveText(_item as IItemStack, _text as string) as void
 {
-    _item.addTooltip(_text);
+    var _mcText as MCTextComponent = MCTextComponent.createStringTextComponent(_text);
+    _item.addTooltip(_mcText);
 }
 
-function gFlavorText(_item as IItemStack, _text as String) as void
+function gFlavorText(_item as IItemStack, _text as string) as void
 {
-    _item.addTooltip(_text);
+    var _mcText as MCTextComponent = MCTextComponent.createStringTextComponent(_text);
+    _item.addTooltip(_mcText);
 }
