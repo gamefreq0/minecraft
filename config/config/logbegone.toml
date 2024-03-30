@@ -1,10 +1,43 @@
 
 [logbegone]
     phrases = [
-
+        # deprecation warnings, we don't care
+        "Called deprecated",
+    
+        # metadata complaints, we don't care
+        "does not specify \"minVersion\" property",
+        "Static binding violation",
+    
+        # patch mod conflicts, we don't care because we've configured them
+        "Skipping performant.mixins.json:connection.ServerPlayNetHandlerMixin->@ModifyConstant::playTimeout(J)J with priority 100, already redirected by randompatches.mixins.json:timeouts.ServerPlayNetHandlerKeepAliveMixin->@ModifyConstant::getKeepAlivePacketInterval(J)J with priority 1000",
+    
+        # abnormals
+        "Unable to resolve texture due to reference chain thatch",
+        "Unable to resolve texture due to reference chain extrudes",
+        
+        # advanced peripherals
+        "Failed to load integration for draconicevolution",
+        "Failed to load integration for immersiveengineering",
+        "Failed to load integration for integrateddynamics",
+        "Failed to load integration for storagedrawers",
+        
+        # chicken chunks
+        "Unable to load model: 'chickenchunks",
+        
+        # craftvania
+        "Using missing texture, unable to load craftvania2:textures/items/knife_1.16.2.png",
+        
+        # Create additions
+        "Unable to load model: 'createaddition",
+        "Unable to resolve texture reference: #missing",
+        
+        # Macaw's bridges
+        "Parsing error loading custom advancement mcwbridges:recipes/iron_bridge_stair: Unknown item id 'mcwbridges:most1'",
+        
+        # vehicle mod
+        "Exception loading blockstate definition: 'vehicle",
     ]
-
+    
     regex = [
-
+    
     ]
-
