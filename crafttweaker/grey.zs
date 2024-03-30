@@ -1,6 +1,12 @@
 # Yes, this is the master.
 import crafttweaker.api.item.IItemStack;
 
+import mods.botania.ElvenTrade;
+import mods.botania.ManaInfusion;
+import mods.botania.PetalApothecary;
+import mods.botania.PureDaisy;
+import mods.botania.RuneAltar;
+
 function gRemove(_item as IItemStack) as void
 {
     # vanilla
@@ -16,6 +22,13 @@ function gRemove(_item as IItemStack) as void
     <recipetype:appliedenergistics2:grinder>.removeRecipe(_item);
     <recipetype:appliedenergistics2:inscriber>.removeRecipe(_item);
     
+    # botania
+    <recipetype:botania:elven_trade>.removeRecipe(_item);
+    <recipetype:botania:mana_infusion>.removeRecipe(_item);
+    <recipetype:botania:petal_apothecary>.removeRecipe(_item);
+    <recipetype:botania:pure_daisy>.removeRecipe(_item);
+    <recipetype:botania:runic_altar>.removeRecipe(_item);
+
     # Create
     <recipetype:create:compacting>.removeRecipe(_item);
     <recipetype:create:crushing>.removeRecipe(_item);
