@@ -91,3 +91,13 @@ function gRemoveAndHideList(_items as IItemStack[]) as void
         gRemoveAndHide(_item);
     }
 }
+
+function gDescriptiveText(_item as IItemStack, _text as String) as void
+{
+    _item.addTooltip(_text);
+}
+
+function gFlavorText(_item as IItemStack, _text as String) as void
+{
+    _item.addTooltip(_text);
+}
