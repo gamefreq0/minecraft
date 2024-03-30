@@ -104,3 +104,9 @@ function gFlavorText(_item as IItemStack, _text as string) as void
     var _mcText as MCTextComponent = MCTextComponent.createStringTextComponent(_text);
     _item.addTooltip(_mcText);
 }
+
+function gBreakText(_item as IItemStack) as void
+{
+    var _mcText as MCTextComponent = MCTextComponent.createStringTextComponent("");
+    _item.addTooltip(_mcText);
+}
