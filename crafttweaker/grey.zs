@@ -26,7 +26,6 @@ function gRemove(_item as IItemStack) as void
     <recipetype:botania:elven_trade>.removeRecipe(_item);
     <recipetype:botania:mana_infusion>.removeRecipe(_item);
     <recipetype:botania:petal_apothecary>.removeRecipe(_item);
-    <recipetype:botania:pure_daisy>.removeRecipe(_item);
     <recipetype:botania:runic_altar>.removeRecipe(_item);
 
     # Create
