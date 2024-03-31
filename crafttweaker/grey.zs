@@ -136,7 +136,7 @@ function gDumpRecipes() as void
 
     for _manager in _managers
     {
-        var _recipes as WrapperRecipe[] = _manager.getAllRecipes();
+        var _recipes as stdlib.List<WrapperRecipe> = _manager.getAllRecipes();
         
         for _recipe in _recipes
         {
