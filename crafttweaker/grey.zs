@@ -1,6 +1,9 @@
 # Yes, this is the master.
+import crafttweaker.api.item.IIngredient;
 import crafttweaker.api.item.IItemStack;
 import crafttweaker.api.recipe.Replacer;
+import crafttweaker.api.recipes.WrapperRecipe;
+import crafttweaker.api.registries.IRecipeManager;
 import crafttweaker.api.util.text.MCTextComponent;
 
 import mods.botania.ElvenTrade;
@@ -9,39 +12,53 @@ import mods.botania.PetalApothecary;
 import mods.botania.PureDaisy;
 import mods.botania.RuneAltar;
 
+function gRecipeManagers() as IRecipeManager[]
+{
+    var ret as IRecipeManager[] = [
+        # AE2
+        <recipetype:appliedenergistics2:grinder>,
+        <recipetype:appliedenergistics2:inscriber>,
+        
+        # botania
+        <recipetype:botania:elven_trade>,
+        <recipetype:botania:mana_infusion>,
+        <recipetype:botania:petal_apothecary>,
+        <recipetype:botania:runic_altar>,
+
+        # Create
+        <recipetype:create:compacting>,
+        <recipetype:create:crushing>,
+        <recipetype:create:cutting>,
+        <recipetype:create:emptying>,
+        <recipetype:create:filling>,
+        <recipetype:create:mechanical_crafting>,
+        <recipetype:create:milling>,
+        <recipetype:create:mixing>,
+        <recipetype:create:pressing>,
+        <recipetype:create:sandpaper_polishing>,
+        <recipetype:create:splashing>,
+
+        # vanilla
+        <recipetype:minecraft:blasting>,
+        <recipetype:minecraft:campfire_cooking>,
+        <recipetype:minecraft:crafting>,
+        <recipetype:minecraft:smelting>,
+        <recipetype:minecraft:smithing>,
+        <recipetype:minecraft:smoking>,
+        <recipetype:minecraft:stonecutting>
+    ];
+
+    return ret;
+}
+
 function gRemove(_item as IItemStack) as void
 {
-    # vanilla
-    blastFurnace.removeRecipe(_item);
-    campfire.removeRecipe(_item);
-    craftingTable.removeRecipe(_item);
-    furnace.removeRecipe(_item);
-    smithing.removeRecipe(_item);
-    smoker.removeRecipe(_item);
-    stoneCutter.removeRecipe(_item);
-    
-    # AE2
-    <recipetype:appliedenergistics2:grinder>.removeRecipe(_item);
-    <recipetype:appliedenergistics2:inscriber>.removeRecipe(_item);
-    
-    # botania
-    <recipetype:botania:elven_trade>.removeRecipe(_item);
-    <recipetype:botania:mana_infusion>.removeRecipe(_item);
-    <recipetype:botania:petal_apothecary>.removeRecipe(_item);
-    <recipetype:botania:runic_altar>.removeRecipe(_item);
+    var _managers as IRecipeManager[] = gRecipeManagers();
 
-    # Create
-    <recipetype:create:compacting>.removeRecipe(_item);
-    <recipetype:create:crushing>.removeRecipe(_item);
-    <recipetype:create:cutting>.removeRecipe(_item);
-    <recipetype:create:emptying>.removeRecipe(_item);
-    <recipetype:create:filling>.removeRecipe(_item);
-    <recipetype:create:mechanical_crafting>.removeRecipe(_item);
-    <recipetype:create:milling>.removeRecipe(_item);
-    <recipetype:create:mixing>.removeRecipe(_item);
-    <recipetype:create:pressing>.removeRecipe(_item);
-    <recipetype:create:sandpaper_polishing>.removeRecipe(_item);
-    <recipetype:create:splashing>.removeRecipe(_item);
+    for _manager in _managers
+    {
+        _manager.removeRecipe(_item);
+    }
 }
 
 function gReplaceQueue(_from as IItemStack, _to as IItemStack) as void
@@ -109,4 +126,38 @@ function gBreakText(_item as IItemStack) as void
 {
     var _mcText as MCTextComponent = MCTextComponent.createStringTextComponent("");
     _item.addTooltip(_mcText);
+}
+
+function gDumpRecipes() as void
+{
+    println("recipes:");
+
+    var _managers as IRecipeManager[] = gRecipeManagers();
+
+    for _manager in _managers
+    {
+        var _recipes as WrapperRecipe[] = _manager.getAllRecipes();
+        
+        for _recipe in _recipes
+        {
+            println("    -");
+
+            println("        ingredients:");
+            for _ingredient in _recipe.ingredients
+            {
+                println("            -");
+                println("                bep: " + _ingredient.commandString);
+                println("                leftover: " + _ingredient.getRemainingItem().registryName.toString());
+                println("                items:");
+                for _ingredientItem in _ingredient.items
+                {
+                    println("                    - " + _ingredientItem.registryName.toString());
+                }
+            }
+
+            println("        output:");
+            println("            name: " + _recipe.output.registryName.toString());
+            println("            count: " + _recipe.output.amount);
+        }
+    }
 }
