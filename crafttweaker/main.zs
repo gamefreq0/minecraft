@@ -33,7 +33,7 @@ sophisticatedbackpacks_remove_main();
 
 # vanilla
 vanilla_remove_main();
-# vanilla_descriptions_main()
+vanilla_descriptions_main();
 
 # ------------------------------------------------------------------------------
 
