@@ -156,6 +156,16 @@ function gHideList(_items as IItemStack[]) as void
 {
     for _item in _items
     {
+        var _mcText as MCTextComponent = MCTextComponent.createStringTextComponent("**HIDDEN**");
+
+        var _style as MCStyle = new MCStyle();
+        _style = _style.setItalic(true);
+        _style = _style.setBold(true);
+        _style = _style.setColor(0xCC0000);
+        _mcText = _mcText.setStyle(_style);
+
+        _item.addTooltip(_mcText);
+
         gHide(_item);
     }
 }
@@ -170,6 +180,16 @@ function gRemoveAndHideList(_items as IItemStack[]) as void
 {
     for _item in _items
     {
+        var _mcText as MCTextComponent = MCTextComponent.createStringTextComponent("**FORBIDDEN**");
+
+        var _style as MCStyle = new MCStyle();
+        _style = _style.setItalic(true);
+        _style = _style.setBold(true);
+        _style = _style.setColor(0xCC0000);
+        _mcText = _mcText.setStyle(_style);
+
+        _item.addTooltip(_mcText);
+
         gRemoveAndHide(_item);
     }
 }
