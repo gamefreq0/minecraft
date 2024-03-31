@@ -4,6 +4,7 @@ import crafttweaker.api.item.IItemStack;
 import crafttweaker.api.recipe.Replacer;
 import crafttweaker.api.recipes.WrapperRecipe;
 import crafttweaker.api.registries.IRecipeManager;
+import crafttweaker.api.util.text.MCStyle;
 import crafttweaker.api.util.text.MCTextComponent;
 
 import mods.botania.ElvenTrade;
@@ -63,7 +64,7 @@ function gRecipeManagers() as IRecipeManager[]
 
         # Mekanism
         # <recipetype:mekanism:activating>,
-        #  <recipetype:mekanism:centrifuging>,
+        # <recipetype:mekanism:centrifuging>,
         # <recipetype:mekanism:chemical_infusing>,
         # <recipetype:mekanism:compressing>,
         # <recipetype:mekanism:combining>,
@@ -182,6 +183,12 @@ function gDescriptiveText(_item as IItemStack, _text as string) as void
 function gFlavorText(_item as IItemStack, _text as string) as void
 {
     var _mcText as MCTextComponent = MCTextComponent.createStringTextComponent(_text);
+
+    var _style as MCStyle = new MCStyle();
+    _style = _style.setItalic(true);
+    _style = _style.setColor(0xFF55FF);
+    _mcText = _mcText.setStyle(_style);
+
     _item.addTooltip(_mcText);
 }
 
