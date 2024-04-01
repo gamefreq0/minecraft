@@ -1,0 +1,10 @@
+#Whether non-op players in creative can break/place blocks in any area
+creativeIgnoresProtection = false
+#If non-op players can use '/lmr tool' to get the admin tool for creating areas
+tool = false
+#If area owners can rename their areas
+rename = false
+#Enable nested areas
+#If false then areas cannot be created inside other areas
+nestedAreas = true
+

@@ -1,0 +1,26 @@
+#If true the boundaries of an area will be shown by default
+showArea = false
+#If true passive entities can spawn in an area by default
+passiveSpawning = false
+#If true hostile entities can spawn in an area by default
+hostileSpawning = false
+#If true explosions can destroy blocks in an area by default
+explosion = false
+#If true other players can interact (right click) with items in an area by default
+interactItem = false
+#If true other players can interact (right click) with blocks in an area by default
+interactBlock = false
+#If true other players can use items in an area by default
+useItem = false
+#If true other players can place blocks in an area by default
+placeBlock = false
+#If true other players can break blocks in an area by default
+breakBlock = false
+#If true pistons can move blocks in an area by default
+pistonAction = false
+#The default maximum amount of ticks an area can exist (20 ticks = 1 second)
+#Use -1.0 for no limit
+#Must be a DOUBLE : 1 hour = 3600 seconds = 72000 ticks => 72.0E3
+#Range: -1.0 ~ 1.7976931348623157E308
+lifetime = -1.0
+

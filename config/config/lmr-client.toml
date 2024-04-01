@@ -1,0 +1,28 @@
+#If true passive entities can spawn in an area by default
+#Range: > 0
+showDistance = 16
+#Toggles whether OPs will see area changes in their chat
+showChatLogs = false
+#The scale of the area label that's rendered
+#Range: 0.0 ~ 1.7976931348623157E308
+areaNameScale = 1.0
+#The alpha for the sides of area boxes rendered in the world
+#Range: 0.0 ~ 1.0
+areaBoxAlpha = 0.2
+#The thickness of area box edges rendered in the world
+#Range: 0.0 ~ 1.7976931348623157E308
+areaBoxEdgeThickness = 0.025
+#Toggles whether to render area box sides when rendering nearby areas
+areaBoxNearbySides = true
+#Toggles whether title messages should be displayed when moving into a different area
+titleOnAreaChange = true
+#The colour of the area change title when you move into the Wilderness
+#Allowed Values: BLACK, DARK_BLUE, DARK_GREEN, DARK_AQUA, DARK_RED, DARK_PURPLE, GOLD, GRAY, DARK_GRAY, BLUE, GREEN, AQUA, RED, LIGHT_PURPLE, YELLOW, WHITE
+titleColourWilderness = "GRAY"
+#The colour of the area change title when you move into an area you're a member of
+#Allowed Values: BLACK, DARK_BLUE, DARK_GREEN, DARK_AQUA, DARK_RED, DARK_PURPLE, GOLD, GRAY, DARK_GRAY, BLUE, GREEN, AQUA, RED, LIGHT_PURPLE, YELLOW, WHITE
+titleColourAreaMember = "GREEN"
+#The colour of the area change title when you move into an area you're not a member of
+#Allowed Values: BLACK, DARK_BLUE, DARK_GREEN, DARK_AQUA, DARK_RED, DARK_PURPLE, GOLD, GRAY, DARK_GRAY, BLUE, GREEN, AQUA, RED, LIGHT_PURPLE, YELLOW, WHITE
+titleColourAreaOutsider = "RED"
+

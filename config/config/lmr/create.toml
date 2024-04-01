@@ -1,0 +1,3 @@
+#If true kinetic contraptions can move in an area by default
+kinetics = false
+
