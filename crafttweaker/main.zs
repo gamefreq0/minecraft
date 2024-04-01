@@ -31,6 +31,9 @@ quark_remove_main();
 # Sophisticated Backpacks
 sophisticatedbackpacks_remove_main();
 
+# Waystones
+waystones_remove_main();
+
 # vanilla
 vanilla_remove_main();
 vanilla_descriptions_main();
