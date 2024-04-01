@@ -34,6 +34,9 @@ sophisticatedbackpacks_remove_main();
 # Waystones
 waystones_remove_main();
 
+# Zoo and Wild Animals
+zawa_remove_main();
+
 # vanilla
 vanilla_remove_main();
 vanilla_descriptions_main();

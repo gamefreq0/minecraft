@@ -2,7 +2,7 @@
 import crafttweaker.api.item.IItemStack;
 
 # don't forget to add a call to the function into main.zs
-function template_remove_main() as void
+function zawa_remove_main() as void
 {
     # list of all the items we want to remove, as an array.
     var itemsToRemove = [
