@@ -1,0 +1,21 @@
+
+[splatcraft]
+	#Squid Key Mode
+	#Allowed Values: HOLD, TOGGLE
+	squidKeyMode = "TOGGLE"
+	#How far away stage barriers or voids will render away from you.
+	#Range: 4 ~ 80
+	barrierRenderDistance = 40
+	#Determines whether the any indicator that determines how much ink you have left matches vanilla durability colors instead of your ink color.
+	vanillaInkDurabilityColor = false
+	#Prevents Stage Barriers from rendering in creative mode unless the player is holding one in their hand.
+	holdBarrierToRender = false
+	#Determines whether the ink indicator near your crosshair warns you if your ink is low.
+	lowInkWarning = true
+	#Determines how the amount of ink left in your tank is visualized.
+	#Allowed Values: CROSSHAIR, DURABILITY, BOTH, NONE
+	inkIndicator = "BOTH"
+	#Prevents changing FOV when in Squid Mode
+	#Allowed Values: SUBMERGED, ALWAYS, OFF
+	preventBobView = "ALWAYS"
+

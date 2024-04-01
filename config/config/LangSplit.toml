@@ -1,0 +1,9 @@
+
+[general]
+	#Put the secondary language code here.
+	"Language Code" = "jbo_en"
+	#Enable this if you wanna render the translation on the same line.
+	"In Line" = false
+	#Enables the debugger when rendering tooltip. For normal gameplay you want to leave this off.
+	Debugger = false
+
