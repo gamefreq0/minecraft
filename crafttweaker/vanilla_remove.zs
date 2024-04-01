@@ -17,6 +17,7 @@ function vanilla_remove_main() as void
         <item:minecraft:bee_spawn_egg>,
         <item:minecraft:blaze_spawn_egg>,
         <item:minecraft:cat_spawn_egg>,
+        <item:minecraft:cave_spider_spawn_egg>,
         <item:minecraft:chicken_spawn_egg>,
         <item:minecraft:cod_spawn_egg>,
         <item:minecraft:cow_spawn_egg>,

@@ -137,7 +137,8 @@ function doomweapon_remove_main() as void
 
     # Items to hide, for various reasons
     var itemsToHide = [
-        # wait, nothing here?
+        <item:doom:arachnotron_spawn_egg>,
+        <item:doom:arachnotroneternal_spawn_egg>
     ] as IItemStack[];
 
     # defined in grey.zs

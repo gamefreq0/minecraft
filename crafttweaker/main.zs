@@ -10,6 +10,9 @@ bountifulbaubles_remove_main();
 # bperipherals
 bperipherals_remove_main();
 
+# chococraft
+chococraft_remove_main();
+
 # doomweapons
 doomweapon_remove_main();
 
