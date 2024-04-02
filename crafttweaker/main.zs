@@ -13,6 +13,9 @@ bperipherals_remove_main();
 # chococraft
 chococraft_remove_main();
 
+# craftvania2
+craftvania_remove_main();
+
 # doomweapons
 doomweapon_remove_main();
 doomweapon_descriptions_main();
