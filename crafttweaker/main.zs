@@ -15,6 +15,7 @@ chococraft_remove_main();
 
 # doomweapons
 doomweapon_remove_main();
+doomweapon_descriptions_main();
 
 # Emendatus Enigmatica
 ee_recipes_main();
