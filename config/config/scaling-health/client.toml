@@ -78,7 +78,7 @@
 
 [difficulty]
 	#Display a warning to players trying to sleep, to remind them their difficulty may change. Sleeping is still allowed.
-	warnWhenSleeping = true
+	warnWhenSleeping = false
 
 	[difficulty.meter]
 		#When to show the difficulty meter.
@@ -94,9 +94,9 @@
 			#Valid values: TOP_LEFT, TOP_CENTER, TOP_RIGHT, CENTER_LEFT, CENTER, CENTER_RIGHT, BOTTOM_LEFT, BOTTOM_CENTER, BOTTOM_RIGHT
 			anchor = "BOTTOM_LEFT"
 			#Fine-tune the difficulty meter's position
-			offsetX = 5
+			offsetX = 150
 			#Fine-tune the difficulty meter's position
-			offsetY = -30
+			offsetY = 0
 
 		[difficulty.meter.text]
 			#Scale of text on the difficulty meter
