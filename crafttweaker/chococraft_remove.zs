@@ -14,16 +14,16 @@ function chococraft_remove_main() as void
 
     # Items to hide, for various reasons
     var itemsToHide = [
-        <item:chococraft_black_chocobo_spawn_egg>,
-        <item:chococraft_blue_chocobo_spawn_egg>,
-        <item:chococraft_flame_chocobo_spawn_egg>,
-        <item:chococraft_gold_chocobo_spawn_egg>,
-        <item:chococraft_green_chocobo_spawn_egg>,
-        <item:chococraft_pink_chocobo_spawn_egg>,
-        <item:chococraft_purple_chocobo_spawn_egg>,
-        <item:chococraft_red_chocobo_spawn_egg>,
-        <item:chococraft_white_chocobo_spawn_egg>,
-        <item:chococraft_yellow_chocobo_spawn_egg>
+        <item:chococraft:black_chocobo_spawn_egg>,
+        <item:chococraft:blue_chocobo_spawn_egg>,
+        <item:chococraft:flame_chocobo_spawn_egg>,
+        <item:chococraft:gold_chocobo_spawn_egg>,
+        <item:chococraft:green_chocobo_spawn_egg>,
+        <item:chococraft:pink_chocobo_spawn_egg>,
+        <item:chococraft:purple_chocobo_spawn_egg>,
+        <item:chococraft:red_chocobo_spawn_egg>,
+        <item:chococraft:white_chocobo_spawn_egg>,
+        <item:chococraft:yellow_chocobo_spawn_egg>
     ] as IItemStack[];
 
     # defined in grey.zs
