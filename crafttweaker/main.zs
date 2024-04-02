@@ -19,6 +19,9 @@ doomweapon_remove_main();
 # Emendatus Enigmatica
 ee_recipes_main();
 
+# greysondn command wands
+greysondn_command_wands_remove_main();
+
 # Powah
 powah_remove_main();
 
