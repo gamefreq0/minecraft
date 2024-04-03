@@ -9,6 +9,10 @@ Macaw's Bridges
 ---------------
 None. Checked.
 
+Mekanism
+--------
+Appears to have its own emissives set up. Skipped for now, maybe forever.
+
 RS Gauges
 ---------
 * Fenced Machine Button
