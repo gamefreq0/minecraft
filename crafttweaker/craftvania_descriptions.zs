@@ -164,9 +164,9 @@ function craftvania_descriptions_main() as void
     gBreakText(<item:craftvania2:agunea_item>);
     gDescriptiveText(<item:craftvania2:agunea_item>,"5❤ Use: Throw rapid-fire projectile");
 
-    gDescriptiveText(<item:craftvania2:herb>,"Sub-weapon");
-    gBreakText(<item:craftvania2:herb>);
-    gDescriptiveText(<item:craftvania2:herb>,"10❤ Use: Heal");
+    gDescriptiveText(<item:craftvania2:herb_item>,"Sub-weapon");
+    gBreakText(<item:craftvania2:herb_item>);
+    gDescriptiveText(<item:craftvania2:herb_item>,"10❤ Use: Heal");
 
     gDescriptiveText(<item:craftvania2:wing_item>,"Sub-weapon");
     gBreakText(<item:craftvania2:wing_item>);
