@@ -1,6 +1,14 @@
 This is just a list of things it would probably make sense to have emmisive
 textures on, sorted by mod.
 
+Cooking For Blockheads
+----------------------
+None. Checked.
+
+Macaw's Bridges
+---------------
+None. Checked.
+
 RS Gauges
 ---------
 * Fenced Machine Button
