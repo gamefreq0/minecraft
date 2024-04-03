@@ -13,6 +13,10 @@ bperipherals_remove_main();
 # chococraft
 chococraft_remove_main();
 
+# cooking for blockheads
+cookingforblockheads_remove_main();
+cookingforblockheads_descriptions_main();
+
 # craftvania2
 craftvania_remove_main();
 
