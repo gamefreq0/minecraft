@@ -19,6 +19,7 @@ cookingforblockheads_descriptions_main();
 
 # craftvania2
 craftvania_remove_main();
+craftvania_descriptions_main();
 
 # doomweapons
 doomweapon_remove_main();
