@@ -40,7 +40,7 @@ function craftvania_descriptions_main() as void
     gDescriptiveText(<item:craftvania2:vorpal_blade>,"Very fast attack speed");
 
     gBreakText(<item:craftvania2:crissaegrim>);
-    gDescriptiveText(<item:craftvania2:crissagrim>,"Very fast attack speed");
+    gDescriptiveText(<item:craftvania2:crissaegrim>,"Very fast attack speed");
 
     gBreakText(<item:craftvania2:alucard_sword>);
     gDescriptiveText(<item:craftvania2:alucard_sword>,"1❤ Use: Teleport forwards");
