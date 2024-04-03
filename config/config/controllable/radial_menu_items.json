@@ -4,10 +4,6 @@
     "color": "DARK_RED"
   },
   {
-    "key": "ping.key.look.custom",
-    "color": "YELLOW"
-  },
-  {
     "key": "keybind.sophisticatedbackpacks.open_backpack.custom",
     "color": "YELLOW"
   }
