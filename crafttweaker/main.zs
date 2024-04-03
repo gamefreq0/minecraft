@@ -24,6 +24,9 @@ craftvania_remove_main();
 doomweapon_remove_main();
 doomweapon_descriptions_main();
 
+# easy paxel lite
+easypaxellite_remove_main();
+
 # Emendatus Enigmatica
 ee_recipes_main();
 
