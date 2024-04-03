@@ -43,10 +43,10 @@ function craftvania_descriptions_main() as void
     gDescriptiveText(<item:craftvania2:crissaegrim>,"Very fast attack speed");
 
     gBreakText(<item:craftvania2:alucard_sword>);
-    gDescriptiveText(<item:craftvania2:alucard_sword>,"1❤ Use: Teleport forwards");
+    gDescriptiveText(<item:craftvania2:alucard_sword>,"1 Heart - Use: Teleport forwards");
 
     gBreakText(<item:craftvania2:alucard_sword_modern>);
-    gDescriptiveText(<item:craftvania2:alucard_sword_modern>,"1❤ Use: Teleport forwards");
+    gDescriptiveText(<item:craftvania2:alucard_sword_modern>,"1 Heart - Use: Teleport forwards");
 
     gBreakText(<item:craftvania2:hrunting>);
     gDescriptiveText(<item:craftvania2:hrunting>,"Poisons target");
@@ -68,7 +68,7 @@ function craftvania_descriptions_main() as void
     gDescriptiveText(<item:craftvania2:flamesword>,"Ignites target");
 
     gBreakText(<item:craftvania2:ice_sword>);
-    gDescriptiveText(<item:craftvania2:ice_sword>,"1❤ Use: Shoot freezing projectile");
+    gDescriptiveText(<item:craftvania2:ice_sword>,"1 Heart - Use: Shoot freezing projectile");
     gDescriptiveText(<item:craftvania2:ice_sword>,"Freezes target");
 
     gBreakText(<item:craftvania2:millicanssword>);
@@ -79,7 +79,7 @@ function craftvania_descriptions_main() as void
     gDescriptiveText(<item:craftvania2:moruneblade>,"Vampiric");
 
     gBreakText(<item:craftvania2:holysword>);
-    gDescriptiveText(<item:craftvania2:holysword>,"5❤ Use: Turn undead");
+    gDescriptiveText(<item:craftvania2:holysword>,"5 Heart - Use: Turn undead");
     gDescriptiveText(<item:craftvania2:holysword>,"Increased damage to undead");
 
     gBreakText(<item:craftvania2:claymore>);
@@ -89,7 +89,7 @@ function craftvania_descriptions_main() as void
     gDescriptiveText(<item:craftvania2:zweihander>,"Use: Lunge forwards");
 
     gBreakText(<item:craftvania2:daybreak>);
-    gDescriptiveText(<item:craftvania2:daybreak>,"7❤ Use: Summon whip skeleton");
+    gDescriptiveText(<item:craftvania2:daybreak>,"7 Heart - Use: Summon whip skeleton");
 
     gBreakText(<item:craftvania2:claimh_solais>);
     gDescriptiveText(<item:craftvania2:claimh_solais>,"Slow but very powerful.");
@@ -98,7 +98,7 @@ function craftvania_descriptions_main() as void
     gDescriptiveText(<item:craftvania2:bamboosword>,"Inexpensive bamboo sword.");
 
     gBreakText(<item:craftvania2:masamune>);
-    gDescriptiveText(<item:craftvania2:masamune>,"1❤ Use: Teleport forwards");
+    gDescriptiveText(<item:craftvania2:masamune>,"1 Heart - Use: Teleport forwards");
 
     gBreakText(<item:craftvania2:muramasa>);
     gDescriptiveText(<item:craftvania2:muramasa>,"Gets stronger the weaker it is.");
@@ -122,71 +122,71 @@ function craftvania_descriptions_main() as void
 
     gDescriptiveText(<item:craftvania2:dagger_subweapon_tool>,"Sub-weapon");
     gBreakText(<item:craftvania2:dagger_subweapon_tool>);
-    gDescriptiveText(<item:craftvania2:dagger_subweapon_tool>,"1❤ Use: Throw dagger");
+    gDescriptiveText(<item:craftvania2:dagger_subweapon_tool>,"1 Heart - Use: Throw dagger");
 
     gDescriptiveText(<item:craftvania2:holy_water_item>,"Sub-weapon");
     gBreakText(<item:craftvania2:holy_water_item>);
-    gDescriptiveText(<item:craftvania2:holy_water_item>,"1❤ Use: Throw bottle of holy fire");
+    gDescriptiveText(<item:craftvania2:holy_water_item>,"1 Heart - Use: Throw bottle of holy fire");
 
     gDescriptiveText(<item:craftvania2:axe_subweapon_tool>,"Sub-weapon");
     gBreakText(<item:craftvania2:axe_subweapon_tool>);
-    gDescriptiveText(<item:craftvania2:axe_subweapon_tool>,"1❤ Use: Throw axe");
+    gDescriptiveText(<item:craftvania2:axe_subweapon_tool>,"1 Heart - Use: Throw axe");
 
     gDescriptiveText(<item:craftvania2:cross_item>,"Sub-weapon");
     gBreakText(<item:craftvania2:cross_item>);
-    gDescriptiveText(<item:craftvania2:cross_item>,"1❤ Use: Throw cross boomerang");
+    gDescriptiveText(<item:craftvania2:cross_item>,"1 Heart - Use: Throw cross boomerang");
 
     gDescriptiveText(<item:craftvania2:stopwatchitem>,"Sub-weapon");
     gBreakText(<item:craftvania2:stopwatchitem>);
-    gDescriptiveText(<item:craftvania2:stopwatchitem>,"5❤ Use: Stuns and highlights nearby mobs");
+    gDescriptiveText(<item:craftvania2:stopwatchitem>,"5 Heart - Use: Stuns and highlights nearby mobs");
 
     gDescriptiveText(<item:craftvania2:firebomb_item>,"Sub-weapon");
     gBreakText(<item:craftvania2:firebomb_item>);
-    gDescriptiveText(<item:craftvania2:firebomb_item>,"1❤ Use: Throw fire bomb");
+    gDescriptiveText(<item:craftvania2:firebomb_item>,"1 Heart - Use: Throw fire bomb");
 
     gDescriptiveText(<item:craftvania2:holy_flame_item>,"Sub-weapon");
     gBreakText(<item:craftvania2:holy_flame_item>);
-    gDescriptiveText(<item:craftvania2:holy_flame_item>,"1❤ Use: Throw fire");
+    gDescriptiveText(<item:craftvania2:holy_flame_item>,"1 Heart - Use: Throw fire");
 
     gDescriptiveText(<item:craftvania2:vibhuti_item>,"Sub-weapon");
     gBreakText(<item:craftvania2:vibhuti_item>);
-    gDescriptiveText(<item:craftvania2:vibhuti_item>,"1❤ Use: Create damaging cloud");
+    gDescriptiveText(<item:craftvania2:vibhuti_item>,"1 Heart - Use: Create damaging cloud");
 
     gDescriptiveText(<item:craftvania2:rebound_item>,"Sub-weapon");
     gBreakText(<item:craftvania2:rebound_item>);
-    gDescriptiveText(<item:craftvania2:rebound_item>,"1❤ Use: Throw richocheting projectile");
+    gDescriptiveText(<item:craftvania2:rebound_item>,"1 Heart - Use: Throw richocheting projectile");
 
     gDescriptiveText(<item:craftvania2:holy_book_item>,"Sub-weapon");
     gBreakText(<item:craftvania2:holy_book_item>);
-    gDescriptiveText(<item:craftvania2:holy_book_item>,"5❤ Use: Create damaging field");
+    gDescriptiveText(<item:craftvania2:holy_book_item>,"5 Heart - Use: Create damaging field");
 
     gDescriptiveText(<item:craftvania2:agunea_item>,"Sub-weapon");
     gBreakText(<item:craftvania2:agunea_item>);
-    gDescriptiveText(<item:craftvania2:agunea_item>,"5❤ Use: Throw rapid-fire projectile");
+    gDescriptiveText(<item:craftvania2:agunea_item>,"5 Heart - Use: Throw rapid-fire projectile");
 
     gDescriptiveText(<item:craftvania2:herb_item>,"Sub-weapon");
     gBreakText(<item:craftvania2:herb_item>);
-    gDescriptiveText(<item:craftvania2:herb_item>,"10❤ Use: Heal");
+    gDescriptiveText(<item:craftvania2:herb_item>,"10 Heart - Use: Heal");
 
     gDescriptiveText(<item:craftvania2:wing_item>,"Sub-weapon");
     gBreakText(<item:craftvania2:wing_item>);
-    gDescriptiveText(<item:craftvania2:wing_item>,"1❤ Use: Jump");
+    gDescriptiveText(<item:craftvania2:wing_item>,"1 Heart - Use: Jump");
 
     gDescriptiveText(<item:craftvania2:hellfire_item>,"Sub-weapon");
     gBreakText(<item:craftvania2:hellfire_item>);
-    gDescriptiveText(<item:craftvania2:hellfire_item>,"5❤ Use: Throw 3 fires");
+    gDescriptiveText(<item:craftvania2:hellfire_item>,"5 Heart - Use: Throw 3 fires");
 
     gDescriptiveText(<item:craftvania2:soul_steal_item>,"Sub-weapon");
     gBreakText(<item:craftvania2:soul_steal_item>);
-    gDescriptiveText(<item:craftvania2:soul_steal_item>,"8❤ Use: Create vampiric field");
+    gDescriptiveText(<item:craftvania2:soul_steal_item>,"8 Heart - Use: Create vampiric field");
 
     gDescriptiveText(<item:craftvania2:dark_meta_item>,"Sub-weapon");
     gBreakText(<item:craftvania2:dark_meta_item>);
-    gDescriptiveText(<item:craftvania2:dark_meta_item>,"10❤ Use: Gain vampirism");
+    gDescriptiveText(<item:craftvania2:dark_meta_item>,"10 Heart - Use: Gain vampirism");
 
     gDescriptiveText(<item:craftvania2:bast_soul_item>,"Sub-weapon");
     gBreakText(<item:craftvania2:bast_soul_item>);
-    gDescriptiveText(<item:craftvania2:bast_soul_item>,"1❤ Use: Fly");
+    gDescriptiveText(<item:craftvania2:bast_soul_item>,"1 Heart - Use: Fly");
 
     gDescriptiveText(<item:craftvania2:slow_fall>,"Sub-weapon");
     gBreakText(<item:craftvania2:slow_fall>);
@@ -195,23 +195,23 @@ function craftvania_descriptions_main() as void
 
     gDescriptiveText(<item:craftvania2:retrodaggertool>,"Sub-weapon");
     gBreakText(<item:craftvania2:retrodaggertool>);
-    gDescriptiveText(<item:craftvania2:retrodaggertool>,"1❤ Use: Throw dagger");
+    gDescriptiveText(<item:craftvania2:retrodaggertool>,"1 Heart - Use: Throw dagger");
 
     gDescriptiveText(<item:craftvania2:holy_water_item_retro>,"Sub-weapon");
     gBreakText(<item:craftvania2:holy_water_item_retro>);
-    gDescriptiveText(<item:craftvania2:holy_water_item_retro>,"1❤ Use: Throw bottle of holy fire");
+    gDescriptiveText(<item:craftvania2:holy_water_item_retro>,"1 Heart - Use: Throw bottle of holy fire");
 
     gDescriptiveText(<item:craftvania2:axetoolretro>,"Sub-weapon");
     gBreakText(<item:craftvania2:axetoolretro>);
-    gDescriptiveText(<item:craftvania2:axetoolretro>,"1❤ Use: Throw axe");
+    gDescriptiveText(<item:craftvania2:axetoolretro>,"1 Heart - Use: Throw axe");
 
     gDescriptiveText(<item:craftvania2:retro_cross_item>,"Sub-weapon");
     gBreakText(<item:craftvania2:retro_cross_item>);
-    gDescriptiveText(<item:craftvania2:retro_cross_item>,"1❤ Use: Throw cross boomerang");
+    gDescriptiveText(<item:craftvania2:retro_cross_item>,"1 Heart - Use: Throw cross boomerang");
 
     gDescriptiveText(<item:craftvania2:stopwatchitemretro>,"Sub-weapon");
     gBreakText(<item:craftvania2:stopwatchitemretro>);
-    gDescriptiveText(<item:craftvania2:stopwatchitemretro>,"5❤ Use: Stuns and highlights nearby mobs");
+    gDescriptiveText(<item:craftvania2:stopwatchitemretro>,"5 Heart - Use: Stuns and highlights nearby mobs");
 
     gBreakText(<item:craftvania2:heart>);
     gDescriptiveText(<item:craftvania2:heart>,"Used as ammo for Craft-Vania items.");
