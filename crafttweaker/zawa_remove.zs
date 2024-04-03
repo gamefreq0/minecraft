@@ -14,7 +14,7 @@ function zawa_remove_main() as void
 
     # Items to hide, for various reasons
     var itemsToHide = [
-        <item:zawa:animal_plaque>;
+        <item:zawa:animal_plaque>
     ] as IItemStack[];
 
     # defined in grey.zs
