@@ -46,6 +46,7 @@ waystones_remove_main();
 
 # Zoo and Wild Animals
 zawa_remove_main();
+zawa_descriptions_main();
 
 # vanilla
 vanilla_remove_main();
