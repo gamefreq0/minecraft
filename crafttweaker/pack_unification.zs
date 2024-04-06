@@ -1,17 +1,22 @@
+import crafttweaker.api.recipe.Replacer;
+
 function pack_unification_main() as void
 {
     # --------------------------------------------------------------------------
     # Recipe Replacements
     # --------------------------------------------------------------------------
 
+    # First, create replacer
+    var replacer as Replacer = Replacer.forEverything();
+
     # EE Certus Quartz --> AE2 Certus Quartz
-    gReplaceQueue(<item:emendatusenigmatica:certus_quartz_gem>, <item:appliedenergistics2:certus_quartz_crystal>);
+    replacer.replace(<item:emendatusenigmatica:certus_quartz_gem>, <item:appliedenergistics2:certus_quartz_crystal>);
 
     # EE Charged Certus Quartz --> AE Charged Certus Quartz
-    gReplaceQueue(<item:emendatusenigmatica:charged_certus_quartz_gem>, <item:appliedenergistics2:charged_certus_quartz_crystal>);
+    replacer.replace(<item:emendatusenigmatica:charged_certus_quartz_gem>, <item:appliedenergistics2:charged_certus_quartz_crystal>);
 
-    # Lastly, run all the previous recipe replacements
-    gReplaceCommit();
+    # Lastly, run all the previous recipe replacements queued up
+    replacer.execute();
 
     # --------------------------------------------------------------------------
     # New recipes

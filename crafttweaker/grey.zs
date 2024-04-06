@@ -1,7 +1,6 @@
 # Yes, this is the master.
 import crafttweaker.api.item.IIngredient;
 import crafttweaker.api.item.IItemStack;
-import crafttweaker.api.recipe.Replacer;
 import crafttweaker.api.recipes.WrapperRecipe;
 import crafttweaker.api.registries.IRecipeManager;
 import crafttweaker.api.util.text.MCStyle;
@@ -12,10 +11,6 @@ import mods.botania.ManaInfusion;
 import mods.botania.PetalApothecary;
 import mods.botania.PureDaisy;
 import mods.botania.RuneAltar;
-
-# try to static a member here
-# zero confidence but if it works I'll edit this comment anyway
-var replacer as Replacer = Replacer.forEverything();
 
 function gRecipeManagers() as IRecipeManager[]
 {
@@ -127,16 +122,6 @@ function gRemove(_item as IItemStack) as void
     {
         _manager.removeRecipe(_item);
     }
-}
-
-function gReplaceQueue(_from as IItemStack, _to as IItemStack) as void
-{
-    replacer.replace(_from,_to);
-}
-
-function gReplaceCommit() as void
-{
-    replacer.execute();
 }
 
 function gRemoveList(_items as IItemStack[]) as void
