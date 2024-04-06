@@ -2,7 +2,14 @@
     "ding": {
         "sounds": [
             {
-                "name": "ding:ding"
+                "name": "ding"
+            }
+        ]
+    },
+    "gamefreq0-flex": {
+        "sounds": [
+            {
+                "name": "gamefreq0-flex"
             }
         ]
     }
