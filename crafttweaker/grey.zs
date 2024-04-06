@@ -127,7 +127,7 @@ function gRemove(_item as IItemStack) as void
 
 function gReplaceQueue(_from as IItemStack, _to as IItemStack) as void
 {
-    Replacer.forEverything().replace(_from,_to);
+    Replacer.forEverything().replace(_to, _from);
 }
 
 function gReplaceCommit() as void
