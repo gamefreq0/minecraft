@@ -4,6 +4,9 @@
 # artifacts
 artifacts_remove_main();
 
+# botania
+botania_remove_main();
+
 # bountiful baubles
 bountifulbaubles_remove_main();
 
