@@ -25,16 +25,6 @@
                     "name": "doom:powersphere"
                 },
                 {
-                    "type": "item",
-                    "weight": 1,
-                    "name": "doom:soulcube"
-                },
-                {
-                    "type": "item",
-                    "weight": 1,
-                    "name": "doom:daisy"
-                },
-                {
                     "name": "minecraft:map",
                     "type": "minecraft:item",
                     "weight": 1,

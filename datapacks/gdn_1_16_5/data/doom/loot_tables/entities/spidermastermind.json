@@ -6,10 +6,6 @@
             "entries": [
                 {
                     "type": "minecraft:item",
-                    "name": "doom:ballista"
-                },
-                {
-                    "type": "minecraft:item",
                     "name": "minecraft:ghast_tear",
                     "functions": [
                         {

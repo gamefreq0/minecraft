@@ -6,7 +6,7 @@
             "entries": [
                 {
                     "type": "minecraft:item",
-                    "name": "doom:argent_bolt",
+                    "name": "doom:argent_energy",
                     "functions": [
                         {
                             "function": "minecraft:set_count",
