@@ -35,7 +35,7 @@ doomweapon_descriptions_main();
 easypaxellite_remove_main();
 
 # Emendatus Enigmatica
-ee_recipes_main();
+# nothing now
 
 # greysondn command wands
 greysondn_command_wands_remove_main();
