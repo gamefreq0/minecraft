@@ -13,6 +13,10 @@ import mods.botania.PetalApothecary;
 import mods.botania.PureDaisy;
 import mods.botania.RuneAltar;
 
+# try to static a member here
+# zero confidence but if it works I'll edit this comment anyway
+var replacer as Replacer = Replacer.forEverything();
+
 function gRecipeManagers() as IRecipeManager[]
 {
     var ret as IRecipeManager[] = [
@@ -127,12 +131,12 @@ function gRemove(_item as IItemStack) as void
 
 function gReplaceQueue(_from as IItemStack, _to as IItemStack) as void
 {
-    Replacer.forEverything().replace(_from,_to);
+    replacer.replace(_from,_to);
 }
 
 function gReplaceCommit() as void
 {
-    Replacer.forEverything().execute();
+    replacer.execute();
 }
 
 function gRemoveList(_items as IItemStack[]) as void
