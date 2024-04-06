@@ -7,7 +7,7 @@ function pack_unification_main() as void
     # --------------------------------------------------------------------------
 
     # First, create replacer
-    var replacer as Replacer = Replacer.forEverything();
+    var replacer as Replacer = Replacer.forTypes(gRecipeManagers());
 
     # EE Certus Quartz --> AE2 Certus Quartz
     replacer.replace(<item:emendatusenigmatica:certus_quartz_gem>, <item:appliedenergistics2:certus_quartz_crystal>);
