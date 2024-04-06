@@ -34,7 +34,7 @@ function craftvania_remove_main() as void
         <item:craftvania2:vladeye>,
         <item:craftvania2:vladring>,
         <item:craftvania2:vorpal_blade>,
-        <item:craftvania2:wing_item>,
+        <item:craftvania2:wing_item>
     ] as IItemStack[];
 
     # defined in grey.zs
