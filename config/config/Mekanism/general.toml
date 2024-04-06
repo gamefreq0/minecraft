@@ -4,7 +4,7 @@
 	#Log Mekanism packet names. Debug setting.
 	logPackets = false
 	#Disable to make the anchor upgrade not do anything.
-	allowChunkloading = true
+	allowChunkloading = false
 	#Enable this to allow dragging items from JEI into the target slot of Digital Miner filters.
 	easyMinerFilters = false
 	#How many ticks must pass until a block's active state is synced with the client, if it has been rapidly changing.
