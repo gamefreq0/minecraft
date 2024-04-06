@@ -17,6 +17,9 @@ chococraft_remove_main();
 cookingforblockheads_remove_main();
 cookingforblockheads_descriptions_main();
 
+# corail tombstone
+tombstone_remove_main();
+
 # craftvania2
 craftvania_remove_main();
 craftvania_descriptions_main();
