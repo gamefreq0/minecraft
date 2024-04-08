@@ -6,8 +6,8 @@ function computercraft_remove_main() as void
 {
     # list of all the items we want to remove, as an array.
     var itemsToRemove = [
-        <computercraft:turtle_advanced>,
-        <computercraft:turtle_normal>
+        <item:computercraft:turtle_advanced>,
+        <item:computercraft:turtle_normal>
     ] as IItemStack[];
 
     # defined in grey.zs
