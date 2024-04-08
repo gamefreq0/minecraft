@@ -6,7 +6,7 @@
         "structures": {}
       },
       "layers": [],
-      "biome": "net.darkglass.mc.dp.grey:safetwilight"
+      "biome": "net.darkglass.mc.dp:safetwilight"
     }
   },
   "type": "minecraft:overworld"
