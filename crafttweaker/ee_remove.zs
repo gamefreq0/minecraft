@@ -1044,5 +1044,5 @@ function ee_remove_main() as void
     ] as IItemStack[];
 
     # defined in grey.zs
-    gRemoveList(itemsToUnrecipe);
+    gSilentRemoveAndHideList(itemsToUnrecipe);
 }

@@ -183,6 +183,14 @@ function gRemoveAndHideList(_items as IItemStack[]) as void
     }
 }
 
+function gSilentRemoveAndHideList(_items as IItemstack[]) as void
+{
+    for _item in _items
+    {
+        gRemoveAndHide(_item);
+    }
+}
+
 function gDescriptiveText(_item as IItemStack, _text as string) as void
 {
     var _mcText as MCTextComponent = MCTextComponent.createStringTextComponent(_text);
