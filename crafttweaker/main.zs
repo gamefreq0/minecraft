@@ -40,6 +40,9 @@ easypaxellite_remove_main();
 # greysondn command wands
 greysondn_command_wands_remove_main();
 
+# Mekanism
+mekanism_remove_main();
+
 # Powah
 powah_remove_main();
 
