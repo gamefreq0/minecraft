@@ -1,5 +1,6 @@
 # small handful of things we don't like much
 import crafttweaker.api.item.IItemStack;
+import crafttweaker.api.registries.IRecipeManager;
 
 # don't forget to add a call to the function into main.zs
 function ee_remove_main() as void
@@ -1044,5 +1045,8 @@ function ee_remove_main() as void
     ] as IItemStack[];
 
     # defined in grey.zs
-    gSilentRemoveAndHideList(itemsToUnrecipe);
+    for _item in itemsToUnrecipe
+    {
+        gRemoveAndHide(_item);
+    }
 }
