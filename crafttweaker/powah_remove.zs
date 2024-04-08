@@ -1,4 +1,4 @@
-# small handful of projecte things we don't like much
+# small handful of things we don't like much
 import crafttweaker.api.item.IItemStack;
 
 function powah_remove_main() as void

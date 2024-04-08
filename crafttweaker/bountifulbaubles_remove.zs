@@ -1,4 +1,4 @@
-# small handful of baubles we don't like much
+# small handful of things we don't like much
 import crafttweaker.api.item.IItemStack;
 
 function bountifulbaubles_remove_main() as void

@@ -1,4 +1,4 @@
-# small handful of artifacts we don't like much
+# small handful of things we don't like much
 import crafttweaker.api.item.IItemStack;
 
 function projectred_remove_main() as void
