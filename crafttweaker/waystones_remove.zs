@@ -6,6 +6,9 @@ function waystones_remove_main() as void
 {
     # list of all the items we want to remove, as an array.
     var itemsToRemove = [
+        <item:waystones:attuned_shard>,
+        <item:waystones:warp_dust>,
+        <item:waystones:warp_plate>,
         <item:waystones:warp_stone>,
 
         # can't do sharestones with warp stone banned
@@ -24,7 +27,8 @@ function waystones_remove_main() as void
         <item:waystones:blue_sharestone>,
         <item:waystones:brown_sharestone>,
         <item:waystones:green_sharestone>,
-        <item:waystones:black_sharestone>
+        <item:waystones:black_sharestone>,
+        <item:waystones:red_sharestone>
     ] as IItemStack[];
 
     # defined in grey.zs
