@@ -969,7 +969,7 @@
 		#Range: 0 ~ 64
 		overworld_size = 6
 		#Activate/Deactivate the Ore Gen in The Overworld [Default: true]
-		generate_in_the_overworld = false
+		generate_in_the_overworld = true
 
 	["Uranium Config"."The End"]
 		#Baseline Y-Level [Default: 32]
