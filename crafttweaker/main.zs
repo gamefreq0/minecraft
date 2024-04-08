@@ -1,6 +1,9 @@
 # entry point for all scripts in folder
 # should enable ordering and easier enable/disable of functions
 
+# advanced peripherals
+advancedperipherals_remove_main();
+
 # artifacts
 artifacts_remove_main();
 
