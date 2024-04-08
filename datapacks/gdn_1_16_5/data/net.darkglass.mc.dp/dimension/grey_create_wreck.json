@@ -15,7 +15,7 @@
           "height": 70
         }
       ],
-      "biome": "net.darkglass.mc.dp:safespace"
+      "biome": "net.darkglass.mc.dp:grey_safespace"
     }
   },
   "type": "net.darkglass.mc.dp:grey_safedim"
