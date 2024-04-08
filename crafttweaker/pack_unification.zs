@@ -25,22 +25,22 @@ function pack_unification_main() as void
     # Item hiding and removal
     # --------------------------------------------------------------------------
     # list of all the items we want to remove, as an array.
-    var itemsToRemove = [
+    # var itemsToRemove = [
         # wait, nothing here?
-    ] as IItemStack[];
+    # ] as IItemStack[];
 
     # defined in grey.zs
-    gRemoveAndHideList(itemsToRemove);
+    # (itemsToRemove);
 
     # Items to hide, for various reasons
-    var itemsToHide = [
-        <item:emendatusenigmatica:certus_quartz_dust>,
-        <item:emendatusenigmatica:certus_quartz_gem>,
-        <item:emendatusenigmatica:charged_certus_quartz_gem>
-    ] as IItemStack[];
+    # var itemsToHide = [
+    #     <item:emendatusenigmatica:certus_quartz_dust>,
+    #     <item:emendatusenigmatica:certus_quartz_gem>,
+    # <item:emendatusenigmatica:charged_certus_quartz_gem>
+    # ] as IItemStack[];
 
     # defined in grey.zs
-    gHideList(itemsToHide);
+    # gHideList(itemsToHide);
 
     # --------------------------------------------------------------------------
     # New recipes
