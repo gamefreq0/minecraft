@@ -39,7 +39,7 @@ function mekanism_remove_main() as void
         <item:mekanismadditions:baby_enderman_spawn_egg>,
         <item:mekanismadditions:baby_skeleton_spawn_egg>,
         <item:mekanismadditions:baby_stray_spawn_egg>,
-        <item:mekanismadditions:baby_wither_skeletion_spawn_egg>
+        <item:mekanismadditions:baby_wither_skeleton_spawn_egg>
     ] as IItemStack[];
 
     # defined in grey.zs
