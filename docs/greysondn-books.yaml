@@ -1,0 +1,89 @@
+- 
+    index: 1
+    date: 9 April 2024
+    title: To Write
+    lore: The decision is made to write books to put into the world
+    text: >-
+        I decided that perhaps it'd be interesting to scatter books around that
+        have some record of the development of this pack and server. I don't
+        often talk about things very loudly, even to people who rely on me for
+        what I'm doing, and I thought, well, this would be interesting.
+        
+        Else Heart.break() did a similar thing, incidentally. In that world,
+        you'd find text documents that looked like things people had saved to
+        their computers and then discarded - scratch files for code, random
+        thoughts, entire manuals. So don't feel like I'm being original.
+-
+    index: 2
+    date: 9 April 2024
+    title: Work's Magnitude
+    lore: The overwhelming nature of the work itself
+    text: >-
+        I'm a very disorganized person. No matter how many lists I make or how I
+        try to line the pieces up, I always forget something. So. For everything
+        I realize there is to do, there's an entry in a notebook, usually one
+        line, that I strike as I do it.
+        
+        Some of these things are easy.
+        
+        Removing an item - or at least removing recipes and marking it forbidden
+        in game - is one line of code in crafttweaker. I look up the id and just
+        plug it into a function I've written. At worst, I need to copy a file
+        and make sure it gets called in main - three very straightforward
+        operations.
+        
+        Most of these things are hard.
+        
+        Unifying ores? Well, several mods don't like to cooperate with
+        Crafttweaker, so I have to write code to do those mods still... then I
+        have to adjust the drop tables from the native versions of those ores
+        which is a datapack thing, which means opening the mod and finding their
+        drops and copying them out and doing a commit of the stock thing so we
+        can see the changes. And then I have to test to make sure the drops are
+        working correctly because I can never get the fiddly, stupid thing to
+        work.
+        
+        And I have an entire page and a half that's nothing but ore and ingot
+        unification notes.
+        
+        Craft-Vania is poorly documented and I have to test half the things in
+        it, plus we need to adjust durabilities (how do I even?!?) so that the
+        items in it aren't basically free compared to vanilla. So that's most of
+        another page.
+        
+        We've got chest loot modifiers that weren't data driven in their
+        original packs, so in order to remove forbidden items from chests -
+        because god knows I'll scream the first time Dreaming goes "why did I
+        get a forbidden item" - we have to find some method that ISN'T a data
+        pack.
+        
+        I've got a custom hud going via RPG hud which is great and all, very
+        aesthetic, very nice with Scaling Health running at the same time,
+        except I've yet to do the mount GUI and I've no clue what half the
+        regions in it do anyway. So nature forbid someone will get an effect I
+        didn't test and then complain that their status bar went black with an
+        outline.
+        
+        Nobody in our group has ever done Mekanism or Create, so I have to just
+        play with those and get a feel for them so that players have someone
+        that can help them. Each of those has a deep progression from start to
+        end and I'm really just gawking at the time investment wondering what
+        I was thinking even making a fully done modpack like this.
+        
+        And then there's documentation. The guidebook doesn't write itself and
+        players need documentation that doesn't include things they're not
+        allowed to have to begin with.
+        
+        I have no clue what I was thinking, honestly. Because there's still
+        other things I can list out and we've not even gotten started. And this
+        is already two years overdue that my life stole from me.
+        
+        And then there will be requests to update it to the latest version of
+        minecraft later on. And half the mods will not have been updated.
+        
+        And it's like 200 mods so loading into the world is like a five minute
+        thing just to find out I forgot another semi-colon in a CraftTweaker
+        script because WOOPSIE DOOPSIE I'M A PYTHON PROGRAMMER AND WE DON'T NEED
+        SEMICOLONS.
+        
+        What was I thinking? WHAT WAS I THINKING?!?
