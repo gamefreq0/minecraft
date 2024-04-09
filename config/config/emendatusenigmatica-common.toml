@@ -2090,7 +2090,7 @@
 		overworld_base = 20
 		#Average Ores per Chunk [Default: 8]
 		#Range: 0 ~ 64
-		overworld_count = 8
+		overworld_count = 1
 		#List of biome IDs in which the ore is not allowed to generate.
 		#To blacklist all biomes from a single mod, use 'modid:*'
 		overworld_biome_blacklist = []
@@ -2161,7 +2161,7 @@
 		overworld_base = 20
 		#Average Ores per Chunk [Default: 8]
 		#Range: 0 ~ 64
-		overworld_count = 8
+		overworld_count = 1
 		#List of biome IDs in which the ore is not allowed to generate.
 		#To blacklist all biomes from a single mod, use 'modid:*'
 		overworld_biome_blacklist = []
@@ -2232,7 +2232,7 @@
 		overworld_base = 20
 		#Average Ores per Chunk [Default: 8]
 		#Range: 0 ~ 64
-		overworld_count = 8
+		overworld_count = 1
 		#List of biome IDs in which the ore is not allowed to generate.
 		#To blacklist all biomes from a single mod, use 'modid:*'
 		overworld_biome_blacklist = []
