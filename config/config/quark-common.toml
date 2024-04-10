@@ -2023,7 +2023,7 @@
 		"Items In Backpack Tick" = true
 
 	[oddities.crate]
-		"Max Items" = 640
+		"Max Items" = 256
 
 	[oddities.pipes]
 		#Set to 0 if you don't want pipes to have a max amount of items
