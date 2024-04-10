@@ -18,10 +18,6 @@
           "type": "minecraft:item",
           "weight": 3,
           "name": "artifacts:flame_pendant"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "artifacts:everlasting_beef"
         }
       ],
       "conditions": [

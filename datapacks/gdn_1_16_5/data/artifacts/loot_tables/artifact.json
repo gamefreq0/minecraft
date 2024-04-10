@@ -12,11 +12,6 @@
         {
           "type": "minecraft:item",
           "weight": 8,
-          "name": "artifacts:night_vision_goggles"
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 8,
           "name": "artifacts:panic_necklace"
         },
         {
@@ -87,11 +82,6 @@
         {
           "type": "minecraft:item",
           "weight": 8,
-          "name": "artifacts:scarf_of_invisibility"
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 8,
           "name": "artifacts:digging_claws"
         },
         {
@@ -127,16 +117,6 @@
         {
           "type": "minecraft:item",
           "weight": 8,
-          "name": "artifacts:villager_hat"
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 8,
-          "name": "artifacts:cloud_in_a_bottle"
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 8,
           "name": "artifacts:vampiric_glove"
         },
         {
@@ -166,18 +146,8 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 5,
-          "name": "artifacts:whoopee_cushion"
-        },
-        {
-          "type": "minecraft:item",
           "weight": 4,
           "name": "artifacts:helium_flamingo"
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 2,
-          "name": "artifacts:everlasting_beef"
         }
       ]
     }

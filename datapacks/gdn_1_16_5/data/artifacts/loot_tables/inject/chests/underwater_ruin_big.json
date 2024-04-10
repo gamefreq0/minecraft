@@ -33,10 +33,6 @@
         {
           "type": "minecraft:item",
           "name": "artifacts:power_glove"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "artifacts:cloud_in_a_bottle"
         }
       ],
       "conditions": [

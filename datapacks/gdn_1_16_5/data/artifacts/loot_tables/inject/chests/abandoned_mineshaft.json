@@ -7,11 +7,6 @@
         {
           "type": "minecraft:item",
           "weight": 2,
-          "name": "artifacts:night_vision_goggles"
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 2,
           "name": "artifacts:panic_necklace"
         },
         {
@@ -28,11 +23,6 @@
           "type": "minecraft:item",
           "weight": 2,
           "name": "artifacts:digging_claws"
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 2,
-          "name": "artifacts:cloud_in_a_bottle"
         },
         {
           "type": "minecraft:item",

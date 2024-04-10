@@ -17,11 +17,6 @@
         {
           "type": "minecraft:item",
           "weight": 2,
-          "name": "artifacts:whoopee_cushion"
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 2,
           "name": "artifacts:charm_of_sinking"
         },
         {
@@ -31,10 +26,6 @@
         {
           "type": "minecraft:item",
           "name": "artifacts:umbrella"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "artifacts:scarf_of_invisibility"
         },
         {
           "type": "minecraft:item",

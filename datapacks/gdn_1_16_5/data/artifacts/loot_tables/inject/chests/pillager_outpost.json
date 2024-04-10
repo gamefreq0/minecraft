@@ -26,15 +26,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "artifacts:scarf_of_invisibility"
-        },
-        {
-          "type": "minecraft:item",
           "name": "artifacts:crystal_heart"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "artifacts:cloud_in_a_bottle"
         },
         {
           "type": "minecraft:item",

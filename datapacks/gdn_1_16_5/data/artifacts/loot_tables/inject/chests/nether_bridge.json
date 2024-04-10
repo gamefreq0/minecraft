@@ -12,11 +12,6 @@
         {
           "type": "minecraft:item",
           "weight": 3,
-          "name": "artifacts:night_vision_goggles"
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 3,
           "name": "artifacts:pocket_piston"
         },
         {
