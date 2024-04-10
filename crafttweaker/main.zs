@@ -4,6 +4,9 @@
 # advanced peripherals
 advancedperipherals_remove_main();
 
+# applied energistics 2
+ae2_remove_main();
+
 # artifacts
 artifacts_remove_main();
 
