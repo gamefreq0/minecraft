@@ -29,6 +29,6 @@ function ae2_remove_main() as void
     # defined in grey.zs
     for _item in itemsToUnrecipe
     {
-        gRemoveAndHide(_item);
+        gHide(_item);
     }
 }
