@@ -23,7 +23,7 @@ function ae2_remove_main() as void
     # EE - recipes to 
     # Not trying to ban or hide items so...
     var itemsToUnrecipe = [
-        <appliedenergistics2:facade>
+        <item:appliedenergistics2:facade>
     ] as IItemStack[];
 
     # defined in grey.zs
