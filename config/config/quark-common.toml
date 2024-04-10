@@ -1944,12 +1944,12 @@
 			G = [0.0, 1.11, 0.0]
 
 [oddities]
-	"Totem Of Holding" = true
-	Backpack = true
+	"Totem Of Holding" = false
+	Backpack = false
 	Crate = true
 	"Matrix Enchanting" = true
-	Magnets = true
-	Pipes = true
+	Magnets = false
+	Pipes = false
 
 	[oddities.totem_of_holding]
 		#Set this to false to remove the behaviour where totems destroy themselves if the player dies again.
