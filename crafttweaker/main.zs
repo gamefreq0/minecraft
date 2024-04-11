@@ -36,6 +36,9 @@ tombstone_remove_main();
 craftvania_remove_main();
 craftvania_descriptions_main();
 
+# create
+create_remove_main();
+
 # doomweapons
 doomweapon_remove_main();
 doomweapon_descriptions_main();
