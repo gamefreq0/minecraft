@@ -2,7 +2,7 @@
 #Bitumen Generation
 [bitumen]
 	#Generate bitumen in the world [true / false]
-	bitumenGeneration = true
+	bitumenGeneration = false
 	#Size of bitumen pockets [1-100, default: 24]
 	#Range: 1 ~ 100
 	bitumenSize = 24

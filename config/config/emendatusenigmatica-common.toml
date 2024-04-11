@@ -1182,7 +1182,7 @@
 		#Range: 0 ~ 64
 		overworld_size = 5
 		#Activate/Deactivate the Ore Gen in The Overworld [Default: true]
-		generate_in_the_overworld = false
+		generate_in_the_overworld = true
 
 	["Zinc Config"."The End"]
 		#Baseline Y-Level [Default: 62]

@@ -85,12 +85,12 @@
 	matterCannon = 200000
 
 [worldGen]
-	quartzOresClusterAmount = 20
+	quartzOresClusterAmount = 0
 	meteoriteBiomeBlacklist = []
-	quartzOresPerCluster = 4
+	quartzOresPerCluster = 0
 	quartzOresBiomeBlacklist = []
 	#Range: 0.0 ~ 1.0
-	spawnChargedChance = 0.08
+	spawnChargedChance = 0.00
 
 [wireless]
 	wirelessTerminalDrainMultiplier = 1.0
