@@ -10,6 +10,8 @@ function create_remove_main() as void
         <item:create:schematicannon>,
         <item:create:schematic_and_quill>,
         <item:create:schematic_table>,
+        <item:create:water_wheel>,
+        <item:create:windmill_bearing>,
 
         # <item:createaddition:alternator>,
 
