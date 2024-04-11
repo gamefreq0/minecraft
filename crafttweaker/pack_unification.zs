@@ -9,13 +9,13 @@ function pack_unification_main() as void
     # First, create replacer
     var replacer as Replacer = Replacer.forEverything();
 
-    # EE Certus Quartz --> AE2 Certus Quartz
+    # Certus Quartz - AE2 (AE2, EE)
     replacer.replace(<item:emendatusenigmatica:certus_quartz_gem>, <item:appliedenergistics2:certus_quartz_crystal>);
 
-    # EE Certus Quartz Dust --> AE2 Certus Quartz Dust 
+    # Certus Quartz Dust - AE2 (AE2, EE) 
     replacer.replace(<item:emendatusenigmatica:certus_quartz_dust>, <item:appliedenergistics2:certus_quartz_dust>);
 
-    # EE Charged Certus Quartz --> AE Charged Certus Quartz
+    # Charged Certus Quartz - AE2 (AE2, EE)
     replacer.replace(<item:emendatusenigmatica:charged_certus_quartz_gem>, <item:appliedenergistics2:charged_certus_quartz_crystal>);
 
     # Lastly, run all the previous recipe replacements queued up
