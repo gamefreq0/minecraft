@@ -19,6 +19,8 @@ bountifulbaubles_remove_main();
 # bperipherals
 bperipherals_remove_main();
 
+# chisels and bits
+chiselsandbits_remove_main();
 # chococraft
 chococraft_remove_main();
 
