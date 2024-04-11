@@ -6,7 +6,7 @@
 	#  * Heart Containers obtained by "challenges" (i.e. Killing dragon, wither, raid)
 	#  * Bargains using Heart Containers (custom recipes won't be affected)
 	#Note that if this option is disabled while staminaVessels is enabled, "challenges" will drop stamina vessels instead.
-	heartContainers = true
+	heartContainers = false
 	#For those who wants to remove all structures added by this mod. Requires restart.
 	structures = true
 	#For those who wants to remove entirety of Spirit Orbs generated from chests, more specifically...
