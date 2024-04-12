@@ -1,0 +1,47 @@
+,,,,
+Attack,,,,
+"1
+Can’t","2
+Physical","3
+Ranged or AoE","4
+Ranged AoE","5
+Ranged AoE Grief"
+Status effects,,,,
+"1
+None","2
+Hunger
+Levitation
+Mining Fatigue
+Weakness","3
+Fire
+Poison
+Slowness","4
+Blindness
+Instant Damage","5
+Wither"
+Pursuit,,,,
+"1
+Runs Away","2
+Stands Still","3
+Follows","4
+Follows with
+Improved mobility","5
+Follows with improved
+Mobility and griefing"
+Group size,,,,
+"1
+1 or Passive Mob","2
+More than 1","3
+Splits","4
+Summons finite","5
+Summons theoretically infinite"
+HP bar,,,,
+"1
+Up to 10 or passive mob","2
+11 - 15 ","3
+16-20","4
+21 to 25","5
+More than 25"
+,,,,
+5 pts,6 to 10 pts,11 to 13 pts,14 to 20 pts,21 to 25 pts
+Tier 1,Tier 2,Tier 3,Tier 4,Tier 5
