@@ -59,7 +59,6 @@ function vanilla_remove_main() as void
         <item:minecraft:skeleton_spawn_egg>,
         <item:minecraft:slime_spawn_egg>,
         <item:minecraft:spider_spawn_egg>,
-        <item:minecraft:spider_spawn_egg>,
         <item:minecraft:squid_spawn_egg>,
         <item:minecraft:stray_spawn_egg>,
         <item:minecraft:strider_spawn_egg>,
