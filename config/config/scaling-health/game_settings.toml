@@ -180,9 +180,9 @@
 #Settings for tamed creatures
 [pets]
 	#Delay (in seconds) between regen ticks for pets. Set 0 to disable.
-	regenDelay = 30.0
+	regenDelay = 0
 	#Define the amount of hp a tamed ped will gain when right clicking with a heart crystal.
-	hpGain = 100.0
+	hpGain = 1.0
 
 #Settings related to difficulty. Difficulty determines various things, such as how much health mobs have.
 [difficulty]
