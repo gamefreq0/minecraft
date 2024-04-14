@@ -1,10 +1,22 @@
 tier1:
-    - "null:mob"
+    - "error"
 tier2:
-    - "null:null"
+    - "doom:lost_soul"
 tier3:
-    - "null:null"
+    - "doom:chaingunner"
+    - "doom:pinky"
+    - "doom:shotgunguy"
+    - "doom:spectre"
 tier4:
-    - "null:null"
+    - "doom:archvile"
+    - "doom:baron"
+    - "doom:cacodemon"
+    - "doom:cyberdemon"
+    - "doom:hellknight"
+    - "doom:imp"
+    - "doom:mancubus"
+    - "doom:painelemental"
+    - "doom:revenant"
+    - "doom:spidermastermind"
 tier5:
-    - "null:null"
+    - "error"
