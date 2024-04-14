@@ -1,9 +1,9 @@
 
 [Misc]
-	"Weapon Trades Toggle" = true
-	"Villager Trades Toggle" = true
-	"Toolsmith Trades Toggle" = true
-	"Mason Trades Toggle" = true
+	"Weapon Trades Toggle" = false
+	"Villager Trades Toggle" = false
+	"Toolsmith Trades Toggle" = false
+	"Mason Trades Toggle" = false
 
 [Weapons]
 	#Range: 1.0 ~ 1.7976931348623157E308
