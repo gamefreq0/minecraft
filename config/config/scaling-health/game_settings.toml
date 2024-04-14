@@ -258,6 +258,10 @@
 			types = ["minecraft:villager"]
 			onKilled = "difficulty + 0.01"
 
+        [[difficulty.mutators.byEntity]]
+            types = ["zawa:african_lion"]
+            onKilled = "difficulty + 1"
+
 	[difficulty.multipliers]
 
 		#Allows difficulty to be changed based on the moon phase. values must have 8 elements.
