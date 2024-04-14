@@ -100,7 +100,7 @@
 		radiationEnabled = true
 		#The radius of chunks checked when running radiation calculations. The algorithm is efficient, but don't abuse it by making this crazy high.
 		#Range: 1 ~ 100
-		chunkCheckRadius = 5
+		chunkCheckRadius = 1
 		#Radiation sources are multiplied by this constant roughly once per second to represent their emission decay. At the default rate, it takes roughly 10 hours to remove a 1,000 Sv/h (crazy high) source.
 		sourceDecayRate = 0.9995
 		#Radiated objects and entities are multiplied by this constant roughly once per second to represent their dosage decay.
