@@ -21,21 +21,6 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 6,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 1.0,
-                "max": 2.0,
-                "type": "minecraft:uniform"
-              }
-            }
-          ],
-          "name": "scalinghealth:power_crystal"
-        },
-        {
-          "type": "minecraft:item",
           "weight": 2,
           "functions": [
             {
@@ -48,20 +33,6 @@
             }
           ],
           "name": "scalinghealth:heart_crystal_shard"
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 10.0,
-                "max": 32.0,
-                "type": "minecraft:uniform"
-              }
-            }
-          ],
-          "name": "scalinghealth:power_crystal_shard"
         }
       ],
       "conditions": [
@@ -158,21 +129,6 @@
             }
           ],
           "name": "scalinghealth:heart_crystal"
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 5,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 1.0,
-                "max": 2.0,
-                "type": "minecraft:uniform"
-              }
-            }
-          ],
-          "name": "scalinghealth:power_crystal"
         }
       ],
       "conditions": [
