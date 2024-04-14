@@ -242,7 +242,7 @@
 		#EvalEx expression: A blight is killed by a player
 		onBlightKilled = "difficulty - 5"
 		#EvalEx expression: A boss is killed by a player
-		onBossKilled = "difficulty - 50"
+		onBossKilled = "difficulty - 5"
 		#EvalEx expression: A normal hostile mob is killed by a player
 		onHostileKilled = "difficulty + 1"
 		#EvalEx expression: A peaceful mob is killed by a player
