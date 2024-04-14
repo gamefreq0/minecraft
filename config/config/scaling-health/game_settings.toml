@@ -125,12 +125,6 @@
 		durationInMinutes = 10.0
 
 	[[mob.randomPotionEffects]]
-		potion = "minecraft:invisibility"
-		level = 1
-		minDifficulty = 35
-		durationInMinutes = 10.0
-
-	[[mob.randomPotionEffects]]
 		potion = "minecraft:resistance"
 		level = 1
 		minDifficulty = 40
