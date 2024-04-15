@@ -6,6 +6,7 @@ function tombstone_remove_main() as void
 {
     # list of all the items we want to remove, as an array.
     var itemsToRemove = [
+        <item:tombstone:book_of_recycling>,
         <item:tombstone:tablet_of_home>,
         <item:tombstone:tablet_of_recall>
     ] as IItemStack[];
