@@ -15,8 +15,8 @@ function botania_remove_main() as void
         <item:botania:floating_orechid>,
         <item:botania:floating_orechid_ignem>,
         <item:botania:light_launcher>,
-        <item:botania:orchid>,
-        <item:botania:orchid_ignem>,
+        <item:botania:orechid>,
+        <item:botania:orechid_ignem>,
         <item:botania:world_seed>
     ] as IItemStack[];
 
