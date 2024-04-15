@@ -70,6 +70,9 @@ projectred_remove_main();
 # Quark
 quark_remove_main();
 
+# securitycraft
+securitycraft_remove_main();
+
 # Sophisticated Backpacks
 sophisticatedbackpacks_remove_main();
 
