@@ -6,6 +6,17 @@ function botania_remove_main() as void
 {
     # list of all the items we want to remove, as an array.
     var itemsToRemove = [
+        <item:botania:auto_crafting_halo>,
+        <item:botania:crafting_halo>,
+        <item:botania:floating_hopperhock>,
+        <item:botania:floating_hopperhock_chibi>,
+        <item:botania:hopperhock>,
+        <item:botania:hopperhock_chibi>,
+        <item:botania:floating_orechid>,
+        <item:botania:floating_orechid_ignem>,
+        <item:botania:light_launcher>,
+        <item:botania:orchid>,
+        <item:botania:orchid_ignem>,
         <item:botania:world_seed>
     ] as IItemStack[];
 
