@@ -1,6 +1,9 @@
 [
     {
         "mob": [
+            "craftvania2:cvredskeleton",
+            "craftvania2:cvredskeletonbones",
+
             "doom:arachnotroneternal",
             "doom:arch_maykr",
             "doom:archvileeternal",
