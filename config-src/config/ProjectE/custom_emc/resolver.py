@@ -4,8 +4,13 @@ from ruamel.yaml import YAML
 from typing import Any
 
 class UpdateListener():
+    def __init__(self):
+        self.isUpdating = False
+    
     def update(self):
-        pass
+        self.isUpdating = True
+        # do stuff here and then...
+        self.isUpdating = False
 
 class IngredientBase():
     def __init__(self):
@@ -63,6 +68,7 @@ class IngredientChoice(Ingredient, UpdateListener):
 
 class Recipe(UpdateListener):
     def __init__(self):
+        super().__init__()
         self.inputs:list[Ingredient] = []
         self.output:Ingredient = Ingredient()
         self.resolved:bool = False
