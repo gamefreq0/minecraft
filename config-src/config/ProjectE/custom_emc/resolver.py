@@ -1,3 +1,8 @@
+import tqdm
+
+from ruamel.yaml import YAML
+from typing import Any
+
 class UpdateListener():
     def update(self):
         pass
@@ -26,15 +31,21 @@ class IngredientBase():
             for listener in self.listeners:
                 listener.update()
 
-class Item(IngredientBase):
+class Item(IngredientBase, UpdateListener):
     def __init__(self):
         super().__init__()
 
-class Tag(IngredientBase):
+class Tag(IngredientBase, UpdateListener):
     def __init__(self):
         super().__init__()
         
         self.items:list[Item] = []
+        
+    def addItem(self, item:Item):
+        if (item not in self.items):
+            self.items.append(item)
+            self.addListener(item)
+            item.addListener(self)
 
 class Ingredient():
     def __init__(self):
@@ -44,8 +55,26 @@ class Ingredient():
 class Recipe(UpdateListener):
     def __init__(self):
         self.inputs:list[Ingredient] = []
-        self.outputs:list[Ingredient] = []
+        self.output:Ingredient = Ingredient()
         self.resolved:bool = False
+    
+    def hasIngredient(self, bep:str) -> bool:
+        ret:bool = False
+        
+        for ingredient in self.inputs:
+            if (ingredient.source.bep == bep):
+                ret = True
+        
+        return ret
+    
+    def getIngredient(self, bep:str) -> Ingredient:
+        ret:Ingredient = Ingredient()
+        
+        for ingredient in self.inputs:
+            if (ingredient.source.bep == bep):
+                ret = ingredient
+        
+        return ret
     
     def isResolvable(self) -> bool:
         ret:bool = False
@@ -61,10 +90,6 @@ class Recipe(UpdateListener):
         for inItem in self.inputs:
             if (not inItem.source.hasValue):
                 ret = False
-                
-        # TODO: Provide resolution when values are partially resolved
-        if (len(self.outputs) > 1):
-            ret = False
         
         return ret
     
@@ -91,11 +116,10 @@ def graph(items:list[Item], tags:list[Tag], recipes:list[Recipe]) -> str:
     
     for recipe in recipes:
         for ingredient in recipe.inputs:
-            for product in recipe.outputs:
-                istr:str = "i_" + str(id(ingredient.source))
-                pstr:str = "i_" + str(id(product.source))
-                line:str = istr + " -> " + pstr
-                ret = ret + line + "\n"
+            istr:str = "i_" + str(id(ingredient.source))
+            pstr:str = "i_" + str(id(recipe.output.source))
+            line:str = istr + " -> " + pstr
+            ret = ret + line + "\n"
     
     # end digraph
     ret = ret + "}"
@@ -104,8 +128,134 @@ def graph(items:list[Item], tags:list[Tag], recipes:list[Recipe]) -> str:
 
 
 def main():
+    # reference points
     items:dict[str, Item] = {}
     tags:dict[str, Tag] = {}
     recipes:list[Recipe] = []
     
+    # probaby better if we do this the sanest way possible
+    # ... with obnoxious status output
+    print("Loading recipe YAML")
     
+    recipeDict:Any = None
+    
+    with open("recipes.yaml") as recipeSrc:
+        yaml=YAML()
+        recipeDict = yaml.load(recipeSrc)
+        
+    print("Recipe YAML loaded")
+    
+    # TODO: Load config yaml, woops!
+    
+    print("Parsing recipe structure")
+    
+    print("")
+    
+    for rawRecipe in recipeDict["recipes"]:
+        
+        print(rawRecipe)
+        print("")
+        
+        # we need empty recipe
+        recipe:Recipe = Recipe()
+        
+        # make sure we actually have a recipe, what the-!?!?
+        if ((rawRecipe["ingredients"] != None) and (rawRecipe["output"]["name"] != "minecraft:air")):
+            
+            # okay. We can handle the inputs first.
+            # TODO: Solve for unions in the ingredient list
+            for rawIngredient in rawRecipe["ingredients"]:
+                # we have to build the structure for it - or at least make sure
+                # it exists - and then wire it up with an ingredient into the
+                # recipe. Also if it's already in the recipe we increase the
+                # counter.
+                if (rawIngredient["bep"] == "<item:minecraft:air>"):
+                    # air is used as a filler in shaped recipes
+                    # it can be safely ignored for our needs
+                    pass
+                elif (rawIngredient["bep"][1:4] == "tag"):
+                    # tag
+                    
+                    # make sure tag exists first
+                    if (not rawIngredient["bep"] in tags):
+                        # just the tag
+                        tagSwp:Tag = Tag()
+                        tagSwp.bep = rawIngredient["bep"]
+                        tags[tagSwp.bep] = tagSwp
+                        
+                        # Now the items that go into it
+                        for item in rawIngredient["items"]:
+                            # rebuild the BEP string
+                            itemBep:str = "<item:" + item + ">"
+                            
+                            # create it if it doesn't exist
+                            if (not itemBep in items):
+                                itemSwp:Item = Item()
+                                itemSwp.bep = itemBep
+                                items[itemSwp.bep] = itemSwp
+                                
+                            # definitely exists, so add it to the tag
+                            tagSwp.addItem(items[itemBep])
+                            
+                    # tag hnow definitely exists, so... check for pre-existing
+                    # ingredient in recipe
+                    if (recipe.hasIngredient(rawIngredient["bep"])):
+                        # exists, retrieve it and increment its value
+                        ingredientSwp:Ingredient = recipe.getIngredient(rawIngredient["bep"])
+                        ingredientSwp.count = ingredientSwp.count + 1
+                    else:
+                        # doesn't exist, so create it with a count of 1 and add it
+                        # to the recipe
+                        ingredientSwp:Ingredient = Ingredient()
+                        ingredientSwp.source = tags[rawIngredient["bep"]]
+                        ingredientSwp.count = 1
+                        recipe.inputs.append(ingredientSwp)
+                else:
+                    # item
+                    
+                    # make sure item exists
+                    if (rawIngredient["bep"] not in items):
+                        itemSwp:Item = Item()
+                        itemSwp.bep = rawIngredient["bep"]
+                        items[itemSwp.bep] = itemSwp
+
+                    # exists, now check for preexisting ingredient in recipe
+                    if recipe.hasIngredient(rawIngredient["bep"]):
+                        # exists, retrieve it and increment its value
+                        ingredientSwp:Ingredient = recipe.getIngredient(rawIngredient["bep"])
+                        ingredientSwp.count = ingredientSwp.count + 1
+                    else:
+                        # doesn't exist, so create it with a count of 1 and add it
+                        # to the recipe
+                        ingredientSwp:Ingredient = Ingredient()
+                        ingredientSwp.source = items[rawIngredient["bep"]]
+                        ingredientSwp.count = 1
+                        recipe.inputs.append(ingredientSwp)
+            
+            # that should do it. Now add the output
+            outputBep:str = "<item:" + rawRecipe["output"]["name"] + ">"
+            
+            if (outputBep not in items):
+                itemSwp:Item = Item()
+                itemSwp.bep = outputBep
+                items[itemSwp.bep] = itemSwp
+                
+            recipe.output.source = items[outputBep]
+            recipe.output.count = rawRecipe["output"]["count"]
+            
+            # append recipe to list
+            recipes.append(recipe)
+        
+    print("")
+    print("outputting graph")
+    
+    with open("graph.dot", "w") as graphFile:
+        iList:list[Item] = list(items.values())
+        tList:list[Tag]  = list(tags.values())
+        
+        graphFile.write(graph(iList, tList, recipes))
+        
+    print("Done!")
+    
+if (__name__ == "__main__"):
+    main()
