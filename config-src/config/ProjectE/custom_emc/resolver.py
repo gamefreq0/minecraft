@@ -111,7 +111,7 @@ def graph(items:list[Item], tags:list[Tag], recipes:list[Recipe]) -> str:
     
     for tag in tags:
         ref:str = "i_" + str(id(tag))
-        line:str = ref +  "[label[\"" + tag.bep + "\"]"
+        line:str = ref +  "[label=\"" + tag.bep + "\"]"
         ret = ret + line + "\n"
     
     for recipe in recipes:
