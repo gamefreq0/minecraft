@@ -52,11 +52,14 @@ class Ingredient():
         self.source:IngredientBase = IngredientBase()
         self.count:int = 0
         
-class IngredientChoice(Ingredient):
+class IngredientChoice(Ingredient, UpdateListener):
     def __init__(self):
-        self.bep:str = ""
+        super().__init__()
         self.sources:list[IngredientBase] = []
-        self.count:int = 0
+        
+    def addIngredient(self, ingredient:IngredientBase):
+        self.sources.append(ingredient)
+        ingredient.addListener(self)
 
 class Recipe(UpdateListener):
     def __init__(self):
@@ -161,17 +164,6 @@ def main():
         
         print(rawRecipe)
         print("")
-
-        # ack
-        # we can only resolve recipes without options for now
-        # TODO: Remove this and implement proper logic for the case
-        skipRecipe:bool = False
-        if ((rawRecipe["ingredients"] != None) and (rawRecipe["output"]["name"] != "minecraft:air")):
-            for rawIngredient in rawRecipe["ingredients"]:
-                if (rawIngredient["bep"].contains("|")):
-                    skipRecipe = True
-        if skipRecipe:
-            continue
         
         # we need empty recipe
         recipe:Recipe = Recipe()
@@ -190,9 +182,37 @@ def main():
                     # it can be safely ignored for our needs
                     pass
                 elif (rawIngredient["bep"].contains("|")):
-                    # skip it for now
-                    # TODO: Write proper option handler
-                    pass
+                    # options
+                    optionsSwp:IngredientChoice = IngredientChoice()
+                    optionsSwp.source.bep = rawIngredient["bep"]
+                    
+                    # check to see if this one exists in recipe
+                    if recipe.hasIngredient(optionsSwp.source.bep):
+                        # get and add one to quantity
+                        swp:Ingredient = recipe.getIngredient(optionsSwp.source.bep)
+                        swp.count = swp.count + 1
+                    else:
+                        rawIngredientList = rawIngredient["bep"].split(" | ")
+                        
+                        # much of this process is echoed down below, if you need
+                        # it explained
+                        for ingredient in rawIngredientList:
+                            if (ingredient[1:4] == "tag"):
+                                if (not ingredient in tags):
+                                    tagSwp:Tag = Tag()
+                                    tagSwp.bep = ingredient
+                                    tags[tagSwp.bep] = tagSwp
+                                # we don't add the items to the tag here
+                                # because we have no clue if they're
+                                # even for a single tag or not
+                                optionsSwp.addIngredient(tags[ingredient])
+                            else:
+                                if (not ingredient in items):
+                                    itemSwp:Item = Item()
+                                    itemSwp.bep = ingredient
+                                    items[itemSwp.bep] = itemSwp
+                                optionsSwp.addIngredient(items[ingredient])
+
                 elif (rawIngredient["bep"][1:4] == "tag"):
                     # tag
                     
@@ -202,20 +222,23 @@ def main():
                         tagSwp:Tag = Tag()
                         tagSwp.bep = rawIngredient["bep"]
                         tags[tagSwp.bep] = tagSwp
+                    
+                    # it exists, so snag it
+                    tagSwp:Tag = tags[rawIngredient["bep"]]
+                    
+                    # Now the items that go into it
+                    for item in rawIngredient["items"]:
+                        # rebuild the BEP string
+                        itemBep:str = "<item:" + item + ">"
                         
-                        # Now the items that go into it
-                        for item in rawIngredient["items"]:
-                            # rebuild the BEP string
-                            itemBep:str = "<item:" + item + ">"
+                        # create it if it doesn't exist
+                        if (not itemBep in items):
+                            itemSwp:Item = Item()
+                            itemSwp.bep = itemBep
+                            items[itemSwp.bep] = itemSwp
                             
-                            # create it if it doesn't exist
-                            if (not itemBep in items):
-                                itemSwp:Item = Item()
-                                itemSwp.bep = itemBep
-                                items[itemSwp.bep] = itemSwp
-                                
-                            # definitely exists, so add it to the tag
-                            tagSwp.addItem(items[itemBep])
+                        # definitely exists, so add it to the tag
+                        tagSwp.addItem(items[itemBep])
                             
                     # tag hnow definitely exists, so... check for pre-existing
                     # ingredient in recipe
