@@ -1,3 +1,4 @@
 config/common/worldedit/sessions/*
 push.sh
 config-src/config/ProjectE/custom_emc/recipes.yaml
+config-src/config/ProjectE/custom_emc/graph.dot
