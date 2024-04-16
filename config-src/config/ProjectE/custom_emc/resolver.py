@@ -181,7 +181,7 @@ def main():
                     # air is used as a filler in shaped recipes
                     # it can be safely ignored for our needs
                     pass
-                elif (rawIngredient["bep"].contains("|")):
+                elif ("|" in rawIngredient["bep"]):
                     # options
                     optionsSwp:IngredientChoice = IngredientChoice()
                     optionsSwp.source.bep = rawIngredient["bep"]
