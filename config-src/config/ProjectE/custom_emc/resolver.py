@@ -65,11 +65,32 @@ class Tag(IngredientBase, UpdateListener):
     def update(self):
         self.isUpdating = True
         
+        # we've been told to update, so check for the new value
+        for item in self.items:
+            if (item.value != self.value):
+                self.setValue(item.value)
+        
         for listener in self.listeners:
             if (not listener.isUpdating):
                 listener.update()
         
         self.isUpdating = False
+
+    def setValue(self, newValue:int):
+        if (self.hasValue):
+            if (newValue != self.value):
+                # TODO: Write a better descriptive case for this
+                raise ValueError()
+        else:
+            self.value = newValue
+            self.hasValue = True
+            
+            for item in self.items:
+                item.setValue(newValue)
+            
+            for listener in self.listeners:
+                if (not listener.isUpdating):
+                    listener.update()
 
 class Ingredient():
     def __init__(self):
