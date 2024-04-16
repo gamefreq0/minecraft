@@ -34,11 +34,21 @@ class IngredientBase():
             self.hasValue = True
             
             for listener in self.listeners:
-                listener.update()
+                if (not listener.isUpdating):
+                    listener.update()
 
 class Item(IngredientBase, UpdateListener):
     def __init__(self):
         super().__init__()
+        
+    def update(self):
+        self.isUpdating = True
+        
+        for listener in self.listeners:
+            if (not listener.isUpdating):
+                listener.update()
+        
+        self.isUpdating = False
 
 class Tag(IngredientBase, UpdateListener):
     def __init__(self):
@@ -51,6 +61,15 @@ class Tag(IngredientBase, UpdateListener):
             self.items.append(item)
             self.addListener(item)
             item.addListener(self)
+
+    def update(self):
+        self.isUpdating = True
+        
+        for listener in self.listeners:
+            if (not listener.isUpdating):
+                listener.update()
+        
+        self.isUpdating = False
 
 class Ingredient():
     def __init__(self):
