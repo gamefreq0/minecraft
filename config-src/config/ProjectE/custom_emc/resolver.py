@@ -155,15 +155,25 @@ def main():
         
         print(rawRecipe)
         print("")
+
+        # ack
+        # we can only resolve recipes without options for now
+        # TODO: Remove this and implement proper logic for the case
+        skipRecipe:bool = False
+        if ((rawRecipe["ingredients"] != None) and (rawRecipe["output"]["name"] != "minecraft:air")):
+            for rawIngredient in rawRecipe["ingredients"]:
+                if (rawIngredient["bep"].contains("|")):
+                    skipRecipe = True
+        if skipRecipe:
+            continue
         
         # we need empty recipe
         recipe:Recipe = Recipe()
         
         # make sure we actually have a recipe, what the-!?!?
         if ((rawRecipe["ingredients"] != None) and (rawRecipe["output"]["name"] != "minecraft:air")):
-            
             # okay. We can handle the inputs first.
-            # TODO: Solve for unions in the ingredient list
+
             for rawIngredient in rawRecipe["ingredients"]:
                 # we have to build the structure for it - or at least make sure
                 # it exists - and then wire it up with an ingredient into the
@@ -172,6 +182,10 @@ def main():
                 if (rawIngredient["bep"] == "<item:minecraft:air>"):
                     # air is used as a filler in shaped recipes
                     # it can be safely ignored for our needs
+                    pass
+                elif (rawIngredient["bep"].contains("|")):
+                    # skip it for now
+                    # TODO: Write proper option handler
                     pass
                 elif (rawIngredient["bep"][1:4] == "tag"):
                     # tag
