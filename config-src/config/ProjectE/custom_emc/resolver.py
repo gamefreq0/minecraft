@@ -165,7 +165,26 @@ class Recipe(UpdateListener):
     def isResolvableBackwards(self) -> bool:
         # TODO: Write a reverse resolver function
         return False
-    
+
+    def update(self):
+        self.isUpdating = True
+        
+        if (self.isResolvableForwards()):
+            # we just total up inputs...
+            totalEMC = 0
+            
+            for item in self.inputs:
+                totalEMC = totalEMC + (item.source.value * item.count)
+            
+            # make sure we can set the value cleanly
+            fVal:float = float(totalEMC) / float(self.output.count)
+            if (float(int(fVal)) == fVal):
+                self.output.source.setValue(int(fVal))
+            else:
+                raise ArithmeticError(f"Can't neatly divide EMC! {totalEMC} / {self.output.count}")
+        
+        self.isUpdating = False
+
 def graph(items:list[Item], tags:list[Tag], recipes:list[Recipe]) -> str:
     ret:str = ""
     
