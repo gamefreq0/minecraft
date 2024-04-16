@@ -51,6 +51,12 @@ class Ingredient():
     def __init__(self):
         self.source:IngredientBase = IngredientBase()
         self.count:int = 0
+        
+class IngredientChoice(Ingredient):
+    def __init__(self):
+        self.bep:str = ""
+        self.sources:list[IngredientBase] = []
+        self.count:int = 0
 
 class Recipe(UpdateListener):
     def __init__(self):
