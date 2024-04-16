@@ -7,9 +7,24 @@ class IngredientBase():
         self.bep:str = ""
         self.hasValue:bool = False
         self.value:int = -1
-        self.updatedRecently = False
         
-        listeners:list[UpdateListener] = []
+        self.listeners:list[UpdateListener] = []
+    
+    def addListener(self, listener:UpdateListener):
+        if (listener not in self.listeners):
+            self.listeners.append(listener)
+    
+    def setValue(self, newValue:int):
+        if (self.hasValue):
+            if (newValue != self.value):
+                # TODO: Write a better descriptive case for this
+                raise ValueError()
+        else:
+            self.value = newValue
+            self.hasValue = True
+            
+            for listener in self.listeners:
+                listener.update()
 
 class Item(IngredientBase):
     def __init__(self):
