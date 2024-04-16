@@ -105,6 +105,20 @@ class IngredientChoice(Ingredient, UpdateListener):
     def addIngredient(self, ingredient:IngredientBase):
         self.sources.append(ingredient)
         ingredient.addListener(self)
+    
+    def setValue(self, newValue:int):
+        self.source.setValue(newValue) # conveinience thing, really
+        for entry in self.sources:
+            entry.setValue(newValue)
+    
+    def update(self):
+        self.isUpdating = True
+        
+        for entry in self.sources:
+            if (entry.value != self.source.value):
+                self.setValue(entry.value)
+        
+        self.isUpdating = False
 
 class Recipe(UpdateListener):
     def __init__(self):
