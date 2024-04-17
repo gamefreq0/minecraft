@@ -211,6 +211,14 @@ class Resolver():
         
         return self.items[bep]
     
+    def getOrCreateTag(self, bep:str) -> Tag:
+        if (bep not in self.tags):
+            tagSwp:Tag = Tag()
+            tagSwp.bep = bep
+            self.tags[tagSwp.bep] = tagSwp
+        
+        return self.tags[bep]
+    
     def graph(self) -> str:
         ret:str = ""
         
@@ -285,14 +293,11 @@ class Resolver():
                             # it explained
                             for ingredient in rawIngredientList:
                                 if (ingredient[1:4] == "tag"):
-                                    if (not ingredient in self.tags):
-                                        tagSwp:Tag = Tag()
-                                        tagSwp.bep = ingredient
-                                        self.tags[tagSwp.bep] = tagSwp
+                                    tagSwp:Tag = self.getOrCreateTag(ingredient)
                                     # we don't add the items to the tag here
                                     # because we have no clue if they're
                                     # even for a single tag or not
-                                    optionsSwp.addIngredient(self.tags[ingredient])
+                                    optionsSwp.addIngredient(tagSwp)
                                 else:
                                     optionsSwp.addIngredient(self.getOrCreateItem(ingredient))
 
@@ -300,14 +305,7 @@ class Resolver():
                         # tag
                         
                         # make sure tag exists first
-                        if (not rawIngredient["bep"] in self.tags):
-                            # just the tag
-                            tagSwp:Tag = Tag()
-                            tagSwp.bep = rawIngredient["bep"]
-                            self.tags[tagSwp.bep] = tagSwp
-                        
-                        # it exists, so snag it
-                        tagSwp:Tag = self.tags[rawIngredient["bep"]]
+                        tagSwp:Tag = self.getOrCreateTag(rawIngredient["bep"])
                         
                         # Now the items that go into it
                         for item in rawIngredient["items"]:
