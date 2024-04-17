@@ -225,16 +225,16 @@ function gDumpRecipes() as void
             for _ingredient in _recipe.ingredients
             {
                 println("            -");
-                println("                bep: \"" + _ingredient.commandString + "\"");
+                println("                bep: '" + _ingredient.commandString + "'");
                 println("                items:");
                 for _ingredientItem in _ingredient.items
                 {
-                    println("                    - \"" + _ingredientItem.registryName.toString() + "\"");
+                    println("                    - '" + _ingredientItem.registryName.toString() + "'");
                 }
             }
 
             println("        output:");
-            println("            name: \"" + _recipe.output.registryName.toString() + "\"");
+            println("            name: '" + _recipe.output.registryName.toString() + "'");
             println("            count: " + _recipe.output.amount);
         }
     }
