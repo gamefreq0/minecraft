@@ -145,6 +145,16 @@ class Recipe(UpdateListener):
         
         return ret
     
+    def getOrCreateIngredient(self, bep:str, source:IngredientBase) -> Ingredient:
+        if not self.hasIngredient(bep):
+            ingredientSwp:Ingredient = Ingredient()
+            ingredientSwp.source = source
+            ingredientSwp.count = 0
+            source.addListener(self)
+            self.inputs.append(ingredientSwp)
+    
+        return self.getIngredient(bep)
+    
     def isResolvable(self) -> bool:
         ret:bool = False
         
@@ -192,6 +202,14 @@ class Resolver():
         self.recipes:list[Recipe] = []
         self.recipeDict:Any = None
         self.configDict:Any = None
+    
+    def getOrCreateItem(self, bep:str) -> Item:
+        if (bep not in self.items):
+            itemSwp:Item = Item()
+            itemSwp.bep = bep
+            self.items[itemSwp.bep] = itemSwp
+        
+        return self.items[bep]
     
     def graph(self) -> str:
         ret:str = ""
@@ -276,11 +294,7 @@ class Resolver():
                                     # even for a single tag or not
                                     optionsSwp.addIngredient(self.tags[ingredient])
                                 else:
-                                    if (not ingredient in self.items):
-                                        itemSwp:Item = Item()
-                                        itemSwp.bep = ingredient
-                                        self.items[itemSwp.bep] = itemSwp
-                                    optionsSwp.addIngredient(self.items[ingredient])
+                                    optionsSwp.addIngredient(self.getOrCreateItem(ingredient))
 
                     elif (rawIngredient["bep"][1:4] == "tag"):
                         # tag
@@ -297,60 +311,28 @@ class Resolver():
                         
                         # Now the items that go into it
                         for item in rawIngredient["items"]:
-                            # rebuild the BEP string
+                            # rebuild the BEP string and add the item
                             itemBep:str = "<item:" + item + ">"
-                            
-                            # create it if it doesn't exist
-                            if (not itemBep in self.items):
-                                itemSwp:Item = Item()
-                                itemSwp.bep = itemBep
-                                self.items[itemSwp.bep] = itemSwp
+                            tagSwp.addItem(self.getOrCreateItem(itemBep))
                                 
-                            # definitely exists, so add it to the tag
-                            tagSwp.addItem(self.items[itemBep])
-                                
-                        # tag hnow definitely exists, so... check for pre-existing
-                        # ingredient in recipe
-                        if (recipe.hasIngredient(rawIngredient["bep"])):
-                            # exists, retrieve it and increment its value
-                            ingredientSwp:Ingredient = recipe.getIngredient(rawIngredient["bep"])
-                            ingredientSwp.count = ingredientSwp.count + 1
-                        else:
-                            # doesn't exist, so create it with a count of 1 and add it
-                            # to the recipe
-                            ingredientSwp:Ingredient = Ingredient()
-                            ingredientSwp.source = self.tags[rawIngredient["bep"]]
-                            ingredientSwp.count = 1
-                            recipe.inputs.append(ingredientSwp)
+                        # tag now definitely exists, so...
+                        # grab ingredient in recipe and increase count
+                        ingredientSwp:Ingredient = recipe.getOrCreateIngredient(rawIngredient["bep"], self.tags[rawIngredient["bep"]])
+                        ingredientSwp.count = ingredientSwp.count + 1
                     else:
                         # item
                         
-                        # make sure item exists
-                        if (rawIngredient["bep"] not in self.items):
-                            itemSwp:Item = Item()
-                            itemSwp.bep = rawIngredient["bep"]
-                            self.items[itemSwp.bep] = itemSwp
+                        # make sure item exists and retrieve it
+                        itemSwp:Item = self.getOrCreateItem(rawIngredient["bep"])
 
-                        # exists, now check for preexisting ingredient in recipe
-                        if recipe.hasIngredient(rawIngredient["bep"]):
-                            # exists, retrieve it and increment its value
-                            ingredientSwp:Ingredient = recipe.getIngredient(rawIngredient["bep"])
-                            ingredientSwp.count = ingredientSwp.count + 1
-                        else:
-                            # doesn't exist, so create it with a count of 1 and add it
-                            # to the recipe
-                            ingredientSwp:Ingredient = Ingredient()
-                            ingredientSwp.source = self.items[rawIngredient["bep"]]
-                            ingredientSwp.count = 1
-                            recipe.inputs.append(ingredientSwp)
+                        # item now exists so... get ingredient and increase count
+                        ingredientSwp:Ingredient = recipe.getOrCreateIngredient(rawIngredient["bep"], itemSwp)
+                        ingredientSwp.count = ingredientSwp.count + 1
                 
                 # that should do it. Now add the output
                 outputBep:str = "<item:" + rawRecipe["output"]["name"] + ">"
                 
-                if (outputBep not in self.items):
-                    itemSwp:Item = Item()
-                    itemSwp.bep = outputBep
-                    self.items[itemSwp.bep] = itemSwp
+                itemSwp = self.getOrCreateItem(outputBep)
                     
                 recipe.output.source = self.items[outputBep]
                 recipe.output.count = rawRecipe["output"]["count"]
