@@ -239,11 +239,7 @@ def main():
     
     print("")
     
-    for rawRecipe in recipeDict["recipes"]:
-        
-        print(rawRecipe)
-        print("")
-        
+    for rawRecipe in tqdm.tqdm(recipeDict["recipes"]):
         # we need empty recipe
         recipe:Recipe = Recipe()
         
