@@ -355,5 +355,11 @@ def main():
     print("Parsing recipe structure")
     resolver.parseRecipeDict()
     
+    
+    print("Testing a value propagation.")
+    resolver.getOrCreateItem("<item:minecraft:diamond>").setValue(8192)
+    print("Value propagation successful!")
+    
+    
 if (__name__ == "__main__"):
     main()
