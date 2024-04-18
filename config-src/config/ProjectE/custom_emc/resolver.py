@@ -40,6 +40,7 @@ class IngredientBase():
 class Item(IngredientBase, UpdateListener):
     def __init__(self):
         super().__init__()
+        self.isUpdating = False
         
     def update(self):
         if (not self.isUpdating):
@@ -53,6 +54,7 @@ class Item(IngredientBase, UpdateListener):
 class Tag(IngredientBase, UpdateListener):
     def __init__(self):
         super().__init__()
+        self.isUpdating = False
         
         self.items:list[Item] = []
         
@@ -99,6 +101,7 @@ class Ingredient():
 class IngredientChoice(Ingredient, UpdateListener):
     def __init__(self):
         super().__init__()
+        self.isUpdating = False
         self.sources:list[IngredientBase] = []
         
     def addIngredient(self, ingredient:IngredientBase):
