@@ -29,9 +29,13 @@ class IngredientBase():
         print(f"{self.bep} told setvalue of {newValue}")
         if (self.hasValue):
             if (newValue != self.value):
+                # TODO: Resolve this experiment, and adjust accordingly
                 print(f"Have value of {self.value}")
-                # TODO: Write a better descriptive case for this
-                raise ValueError()
+                if (self.value < newValue):
+                    self.value = self.value
+                else:
+                    self.value = newValue
+                print(f"Set value to {self.value}")
         else:
             self.value = newValue
             self.hasValue = True
