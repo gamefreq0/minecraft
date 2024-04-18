@@ -378,9 +378,9 @@ def main():
     
     # TODO: Add config recipes
     
-    print("Applying and propagating early config values")
+    print("Applying and propagating normal config values")
     resolver.applyNormalConfigValues()
-    print("Early values done!")
+    print("normal values done!")
     
     # TODO: Apply late config values
     
