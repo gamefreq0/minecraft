@@ -26,14 +26,16 @@ class IngredientBase():
             self.listeners.append(listener)
     
     def setValue(self, newValue:int):
+        print(f"{self.bep} told setvalue of {newValue}")
         if (self.hasValue):
             if (newValue != self.value):
+                print(f"Have value of {self.value}")
                 # TODO: Write a better descriptive case for this
                 raise ValueError()
         else:
             self.value = newValue
             self.hasValue = True
-            
+            print(f"set value to {newValue}")
             for listener in self.listeners:
                 listener.update()
 
@@ -345,7 +347,7 @@ class Resolver():
                 self.recipes.append(recipe)
     
     def applyEarlyConfigValues(self):
-        for entry in tqdm.tqdm(self.configDict["values"]["early"]):
+        for entry in self.configDict["values"]["early"]:
             self.getOrCreateItem(entry["bep"]).setValue(entry["value"])
     
     def writeGraph(self, fpath):
