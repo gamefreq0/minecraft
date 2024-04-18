@@ -1,5 +1,5 @@
-customRecipes: [] # none
 basemult: 3 # this is documentation and not used by the program
+customRecipes: [] # none
 values:
     # early ones are normal ones that are handed to the resolver
     # just like the config for ProjectE
