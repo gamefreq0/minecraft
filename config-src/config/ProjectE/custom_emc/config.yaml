@@ -6,6 +6,9 @@ values:
         -
             bep: '<item:minecraft:diamond>'
             value: 8192
+        -
+            bep:   '<item:minecraft:oak_wood>'
+            value: 64
     # late ones don't propagate
     # a way to tweak singular values after the fact
     late: [] # none
