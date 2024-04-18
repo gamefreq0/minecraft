@@ -68,7 +68,7 @@ class Tag(IngredientBase, UpdateListener):
         if (item not in self.items):
             self.items.append(item)
             self.addListener(item)
-            item.addListener(self)
+            # item.addListener(self)
 
     def update(self):
         if (not self.isUpdating):
