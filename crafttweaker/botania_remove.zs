@@ -7,6 +7,7 @@ function botania_remove_main() as void
     # list of all the items we want to remove, as an array.
     var itemsToRemove = [
         <item:botania:auto_crafting_halo>,
+        <item:botania:conjuration_catalyst>,
         <item:botania:crafting_halo>,
         <item:botania:floating_hopperhock>,
         <item:botania:floating_hopperhock_chibi>,
