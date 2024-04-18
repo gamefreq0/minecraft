@@ -343,7 +343,11 @@ class Resolver():
                 
                 # append recipe to list
                 self.recipes.append(recipe)
-                
+    
+    def applyEarlyConfigValues(self):
+        for entry in tqdm.tqdm(self.configDict["values"]["early"]):
+            self.getOrCreateItem(entry["bep"]).setValue(entry["value"])
+    
     def writeGraph(self, fpath):
         with open(fpath, "w") as graphFile:
             graphFile.write(self.graph())
@@ -364,7 +368,9 @@ def main():
     
     # TODO: Add config recipes
     
-    # TODO: Propagate config values
+    print("Applying and propagating early config values")
+    resolver.applyEarlyConfigValues()
+    print("Early values done!")
     
     # TODO: Apply late config values
     
