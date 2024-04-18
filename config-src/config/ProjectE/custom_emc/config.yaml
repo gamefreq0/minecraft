@@ -1,0 +1,11 @@
+customRecipes: [] # none
+values:
+    # early ones are normal ones that are handed to the resolver
+    # just like the config for ProjectE
+    early:
+        -
+            bep: '<item:minecraft:diamond>'
+            value: 8192
+    # late ones don't propagate
+    # a way to tweak singular values after the fact
+    late: [] # none
