@@ -350,9 +350,13 @@ class Resolver():
                 # append recipe to list
                 self.recipes.append(recipe)
     
-    def applyEarlyConfigValues(self):
-        for entry in self.configDict["values"]["early"]:
+    def applyNormalConfigValues(self):
+        for entry in self.configDict["values"]["normal"]["explicit"]:
             self.getOrCreateItem(entry["bep"]).setValue(entry["value"])
+        for entry in self.configDict["values"]["normal"]["equivalent"]:
+            refItem:Item = self.getOrCreateItem(entry["bep"])
+            for child in entry["children"]:
+                self.getOrCreateItem(child).setValue(refItem.value)
     
     def writeGraph(self, fpath):
         with open(fpath, "w") as graphFile:
@@ -375,7 +379,7 @@ def main():
     # TODO: Add config recipes
     
     print("Applying and propagating early config values")
-    resolver.applyEarlyConfigValues()
+    resolver.applyNormalConfigValues()
     print("Early values done!")
     
     # TODO: Apply late config values

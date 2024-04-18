@@ -1,15 +1,24 @@
 basemult: 3 # this is documentation and not used by the program
 customRecipes: [] # none
 values:
-    # early ones are normal ones that are handed to the resolver
+    # normal ones that are handed to the resolver
     # just like the config for ProjectE
-    early:
-        -
-            bep: '<item:minecraft:diamond>'
-            value: 24576
-        -
-            bep:   '<item:minecraft:oak_wood>'
-            value: 192
+    normal:
+        explicit:
+            -
+                bep: '<item:minecraft:diamond>'
+                value: 24576
+            -
+                bep:   '<item:minecraft:oak_wood>'
+                value: 192
+        equivalent:
+            -
+                bep: '<item:minecraft:oak_wood>'
+                children:
+                    - '<item:minecraft:spruce_wood>'
+                    - '<item:minecraft:jungle_wood>'
+                    - '<item:minecraft:acacia_wood>'
+                    - '<item:minecraft:dark_oak_wood>'
     # late ones don't propagate
     # a way to tweak singular values after the fact
     late: [] # none
