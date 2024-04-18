@@ -8,9 +8,10 @@ class UpdateListener():
         self.isUpdating = False
     
     def update(self):
-        self.isUpdating = True
-        # do stuff here and then...
-        self.isUpdating = False
+        if (not self.isUpdating):
+            self.isUpdating = True
+            # do stuff here and then...
+            self.isUpdating = False
 
 class IngredientBase():
     def __init__(self):
@@ -34,21 +35,20 @@ class IngredientBase():
             self.hasValue = True
             
             for listener in self.listeners:
-                if (not listener.isUpdating):
-                    listener.update()
+                listener.update()
 
 class Item(IngredientBase, UpdateListener):
     def __init__(self):
         super().__init__()
         
     def update(self):
-        self.isUpdating = True
-        
-        for listener in self.listeners:
-            if (not listener.isUpdating):
+        if (not self.isUpdating):
+            self.isUpdating = True
+            
+            for listener in self.listeners:
                 listener.update()
-        
-        self.isUpdating = False
+            
+            self.isUpdating = False
 
 class Tag(IngredientBase, UpdateListener):
     def __init__(self):
@@ -63,18 +63,18 @@ class Tag(IngredientBase, UpdateListener):
             item.addListener(self)
 
     def update(self):
-        self.isUpdating = True
-        
-        # we've been told to update, so check for the new value
-        for item in self.items:
-            if (item.value != self.value):
-                self.setValue(item.value)
-        
-        for listener in self.listeners:
-            if (not listener.isUpdating):
+        if (not self.isUpdating):
+            self.isUpdating = True
+            
+            # we've been told to update, so check for the new value
+            for item in self.items:
+                if (item.value != self.value):
+                    self.setValue(item.value)
+            
+            for listener in self.listeners:
                 listener.update()
-        
-        self.isUpdating = False
+            
+            self.isUpdating = False
 
     def setValue(self, newValue:int):
         if (self.hasValue):
@@ -89,8 +89,7 @@ class Tag(IngredientBase, UpdateListener):
                 item.setValue(newValue)
             
             for listener in self.listeners:
-                if (not listener.isUpdating):
-                    listener.update()
+                listener.update()
 
 class Ingredient():
     def __init__(self):
@@ -112,13 +111,14 @@ class IngredientChoice(Ingredient, UpdateListener):
             entry.setValue(newValue)
     
     def update(self):
-        self.isUpdating = True
-        
-        for entry in self.sources:
-            if (entry.value != self.source.value):
-                self.setValue(entry.value)
-        
-        self.isUpdating = False
+        if (not self.isUpdating):
+            self.isUpdating = True
+            
+            for entry in self.sources:
+                if (entry.value != self.source.value):
+                    self.setValue(entry.value)
+            
+            self.isUpdating = False
 
 class Recipe(UpdateListener):
     def __init__(self):
@@ -177,23 +177,24 @@ class Recipe(UpdateListener):
         return False
 
     def update(self):
-        self.isUpdating = True
-        
-        if (self.isResolvableForwards()):
-            # we just total up inputs...
-            totalEMC = 0
+        if (not self.isUpdating):
+            self.isUpdating = True
             
-            for item in self.inputs:
-                totalEMC = totalEMC + (item.source.value * item.count)
+            if (self.isResolvableForwards()):
+                # we just total up inputs...
+                totalEMC = 0
+                
+                for item in self.inputs:
+                    totalEMC = totalEMC + (item.source.value * item.count)
+                
+                # make sure we can set the value cleanly
+                fVal:float = float(totalEMC) / float(self.output.count)
+                if (float(int(fVal)) == fVal):
+                    self.output.source.setValue(int(fVal))
+                else:
+                    raise ArithmeticError(f"Can't neatly divide EMC! {totalEMC} / {self.output.count}")
             
-            # make sure we can set the value cleanly
-            fVal:float = float(totalEMC) / float(self.output.count)
-            if (float(int(fVal)) == fVal):
-                self.output.source.setValue(int(fVal))
-            else:
-                raise ArithmeticError(f"Can't neatly divide EMC! {totalEMC} / {self.output.count}")
-        
-        self.isUpdating = False
+            self.isUpdating = False
 
 class Resolver():
     def __init__(self):
