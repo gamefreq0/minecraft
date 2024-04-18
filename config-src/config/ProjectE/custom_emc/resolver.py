@@ -355,15 +355,18 @@ def main():
     resolver.loadRecipes("recipes.YAML")
     print("Recipe YAML loaded")
     
-    # TODO: load config yaml, woops!
+    print("Loading config YAML")
+    resolver.loadConfig("config.yaml")
+    print("Loaded config yaml!")
     
     print("Parsing recipe structure")
     resolver.parseRecipeDict()
     
+    # TODO: Add config recipes
     
-    print("Testing a value propagation.")
-    resolver.getOrCreateItem("<item:minecraft:diamond>").setValue(8192)
-    print("Value propagation successful!")
+    # TODO: Propagate config values
+    
+    # TODO: Apply late config values
     
     
 if (__name__ == "__main__"):
