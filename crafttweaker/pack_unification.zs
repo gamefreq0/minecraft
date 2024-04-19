@@ -18,6 +18,11 @@ function pack_unification_main() as void
     # Charged Certus Quartz - AE2 (AE2, EE)
     replacer.replace(<item:emendatusenigmatica:charged_certus_quartz_gem>, <item:appliedenergistics2:charged_certus_quartz_crystal>);
 
+    # Copper Ingot - EE (C, EE, MEK, PR)
+    replacer.replace(<item:create:copper_ingot>, <item:emendatusenigmatica:copper_ingot>);
+    replacer.replace(<item:mekanism:ingot_copper>, <item:emendatusenigmatica:copper_ingot>);
+    replacer.replace(<item:projectred-core:copper_ingot>, <item:emendatusenigmatica:copper_ingot>);
+
     # Lastly, run all the previous recipe replacements queued up
     replacer.execute();
 
