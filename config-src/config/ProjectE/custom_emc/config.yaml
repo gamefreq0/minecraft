@@ -1,4 +1,4 @@
-basemult: 8640 # this is documentation and not used by the program
+basemult: 34560 # this is documentation and not used by the program, should match cobblestone
 customRecipes: [] # none
 unconsumedItems:
     # items which are not consumed by being in a crafting recipe
@@ -12,8 +12,20 @@ values:
     normal:
         explicit:
             -
+                bep: '<item:emendatusenigmatica:copper_ingot>'
+                value: 2937600
+            -
+                bep: '<item:emendatusenigmatica:lead_ingot>'
+                value: 17694720
+            -
+                bep: '<item:emendatusenigmatica:uranium_ingot>'
+                value: 141557760
+            -
                 bep: '<item:mekanism:hdpe_pellet>'
                 value: 0
+            -
+                bep: '<item:minecraft:chorus_fruit>'
+                value: 6635520
             -
                 bep: '<item:minecraft:coal>'
                 value: 4423680
@@ -27,8 +39,17 @@ values:
                 bep: '<item:minecraft:flint>'
                 value: 138240
             -
+                bep: '<item:minecraft:gold_ingot>'
+                value: 70778880
+            -
                 bep:   '<item:minecraft:iron_ingot>'
                 value: 8847360
+            -
+                bep:   '<item:minecraft:iron_nugget>'
+                value: 983040
+            -
+                bep:   '<item:minecraft:honeycomb>'
+                value: 552960
             -
                 bep:   '<item:minecraft:oak_wood>'
                 value: 2211840
@@ -38,17 +59,31 @@ values:
             -
                 bep:   '<item:minecraft:string>'
                 value: 414720
+            -
+                bep:    '<item:minecraft:sugar_cane>'
+                value:  1105920
         equivalent:
             -
                 # base value 0
                 bep: '<item:mekanism:hdpe_pellet>'
                 children:
-                    - 'botania:livingrock'
-                    - 'botania:livingwood'
+                    - '<item:appliedenergistics2:fluix_crystal>'
+                    - '<item:appliedenergistics2:purified_fluix_crystal>'
+                    - '<item:appliedenergistics2:certus_quartz_crystal>'
+                    - '<item:appliedenergistics2:purified_certus_quartz_crystal>'
+                    - '<item:botania:livingrock>'
+                    - '<item:botania:livingwood>'
+                    - '<item:doom:argent_energy>'
+                    - '<item:doom:inmortalsphere>'
+                    - '<item:doom:invisiblesphere>'
+                    - '<item:doom:megasphere>'
+                    - '<item:doom:powersphere>'
             -
                 # normally base value 1
                 bep: '<item:minecraft:cobblestone>'
                 children:
+                    - '<item:atmospheric:arid_sand>'
+                    - '<item:atmospheric:red_arid_sand>'
                     - '<item:minecraft:acacia_leaves>'
                     - '<item:minecraft:birch_leaves>'
                     - '<item:minecraft:dark_oak_leaves>'
@@ -58,12 +93,14 @@ values:
                     - '<item:minecraft:ice>'
                     - '<item:minecraft:jungle_leaves>'
                     - '<item:minecraft:oak_leaves>'
+                    - '<item:minecraft:red_sand>'
                     - '<item:minecraft:sand>'
                     - '<item:minecraft:snow_block>'
                     - '<item:minecraft:spruce_leaves>'
                     - '<item:minecraft:stone>'
                     - '<item:quark:marble>'
                     - '<tag:items:forge:stone>'
+                    - '<tag:items:minecraft:sand>'
                     # Tall Grass, Glass, Grass, Low Covalence Dust,
                     # Mycelium, Netherrack,
                     # Basalt, Basalt Brick, Basalt Cobblestone,
@@ -72,12 +109,28 @@ values:
                 # normally base value 12
                 bep: '<item:minecraft:string>'
                 children:
+                    - '<item:environmental:yak_hair>'
                     - '<item:minecraft:cobweb>'
+                    - '<tag:items:buzzier_bees:candle_wick>'
+            -
+                # normally base value 16
+                bep: '<item:minecraft:honeycomb>'
+                children:
+                    - '<item:minecraft:lily_pad>'
+                    - '<item:quark:tallow>'
+                    - '<tag:items:buzzier_bees:candle_base>'
+            -
+                # normally 256/9 - 28.4 - probably not many of these
+                bep: '<item:minecraft:iron_nugget>'
+                children:
+                    - '<tag:items:forge:nuggets/iron>'
+                    - '<tag:items:forge:nuggets/tin>'
             -
                 # normally base value 64
                 bep: '<item:minecraft:obsidian>'
                 children:
                     - '<item:chococraft:chocobo_drumstick_raw>'
+                    - '<item:fluxnetworks:flux_dust>'
                     - '<item:minecraft:beef>'
                     - '<item:minecraft:chicken>'
                     - '<item:minecraft:clay_ball>'
@@ -95,14 +148,64 @@ values:
                     - '<item:zawa:small_meat>'
                     - '<tag:items:forge:dusts/redstone>'
             -
+                # normally base value 85
+                bep: '<item:emendatusenigmatica:copper_ingot>'
+                children:
+                    - '<item:create:copper_ingot>'
+                    - '<item:emendatusenigmatica:aluminum_chunk>'
+                    - '<item:emendatusenigmatica:copper_chunk>'
+                    - '<item:mekanism:ingot_copper>'
+                    - '<item:projectred-core:copper_ingot>'
+                    - '<tag:items:forge:ingots/aluminum>'
+                    - '<tag:items:forge:ingots/copper>'
+            -
+                # normally base value 192
+                bep: '<item:minecraft:chorus_fruit>'
+                children:
+                    - '<item:minecraft:saddle>'
+                    - '<item:minecraft:gunpowder>'
+            -
                 # Normally base value 256
                 bep: '<item:minecraft:iron_ingot>'
                 children:
+                    - '<item:emendatusenigmatica:iron_chunk>'
+                    - '<item:emendatusenigmatica:tin_chunk>'
                     - '<item:emedatusenigmatica:tin_ingot>'
                     - '<item:mekanism:ingot_tin>'
                     - '<item:projectred-core:tin_ingot>'
                     - '<tag:items:forge:ingots/iron>'
                     - '<tag:items:forge:ingots/tin>'
+            -
+                # normally base value 512
+                bep: '<item:emendatusenigmatica:lead_ingot>'
+                children:
+                    - '<item:emendatusenigmatica:lead_chunk>'
+                    - '<item:emendatusenigmatica:silver_chunk>'
+                    - '<item:emendatusenigmatica:silver_ingot>'
+                    - '<item:mekanism:ingot_lead>'
+                    - '<item:projectred-core:silver_ingot>'
+                    - '<tag:items:forge:ingots/lead>'
+                    - '<tag:items:forge:ingots/silver>'
+            -
+                # Normally base value 2048
+                bep: '<item:minecraft:gold_ingot>'
+                children:
+                    - '<item:emendatusenigmatica:gold_chunk>'
+                    - '<tag:items:forge:ingots/gold>'
+            -
+                # normally base value 4096
+                bep: '<item:emendatusenigmatica:uranium_ingot>'
+                children:
+                    - '<item:emendatusenigmatica:uranium_chunk>'
+                    - '<item:mekanism:ingot_uranium>'
+                    - '<item:minecraft:ghast_tear>'
+                    - '<tag:items:forge:ingots/uranium>'
+            -
+                # normally base value 8192
+                bep: '<item:minecraft:diamond>'
+                children:
+                    - '<item:emendatusenigmatica:diamond_chunk>'
+                    - '<tag:items:forge:gems/diamond>'
             -
                 # just woods
                 bep: '<item:minecraft:oak_wood>'
