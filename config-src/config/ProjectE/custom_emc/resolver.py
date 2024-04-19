@@ -67,8 +67,8 @@ class Tag(IngredientBase, UpdateListener):
     def addItem(self, item:Item):
         if (item not in self.items):
             self.items.append(item)
-            self.addListener(item)
-            # item.addListener(self)
+            # self.addListener(item)
+            item.addListener(self)
 
     def update(self):
         if (not self.isUpdating):
@@ -76,28 +76,14 @@ class Tag(IngredientBase, UpdateListener):
             
             # we've been told to update, so check for the new value
             for item in self.items:
-                if (item.value != self.value):
-                    self.setValue(item.value)
+                if (item.hasValue):
+                    if (item.value < self.value):
+                        self.setValue(item.value)
             
             for listener in self.listeners:
                 listener.update()
             
             self.isUpdating = False
-
-    def setValue(self, newValue:int):
-        if (self.hasValue):
-            if (newValue != self.value):
-                # TODO: Write a better descriptive case for this
-                raise ValueError()
-        else:
-            self.value = newValue
-            self.hasValue = True
-            
-            for item in self.items:
-                item.setValue(newValue)
-            
-            for listener in self.listeners:
-                listener.update()
 
 class Ingredient():
     def __init__(self):
@@ -172,6 +158,18 @@ class Recipe(UpdateListener):
         # TODO: Add reverse resolution
         ret = self.isResolvableForwards()
         
+        # late override - make sure it's not a clone
+        ret = ret and self.isResolvableNonClone()
+        
+        return ret
+    
+    def isResolvableNonClone(self) -> bool:
+        ret:bool = True
+        
+        if (len(self.inputs) == 1):
+            if (self.inputs[0].source.bep == self.output.source.bep):
+                ret = False
+        
         return ret
     
     def isResolvableForwards(self) -> bool:
@@ -180,6 +178,12 @@ class Recipe(UpdateListener):
         for inItem in self.inputs:
             if (not inItem.source.hasValue):
                 ret = False
+        
+        # second pass, check for zeroes
+        for inItem in self.inputs:
+            if (inItem.source.hasValue):
+                if (inItem.source.value == 0):
+                    ret = True
         
         return ret
     
@@ -197,6 +201,11 @@ class Recipe(UpdateListener):
                 
                 for item in self.inputs:
                     totalEMC = totalEMC + (item.source.value * item.count)
+                
+                # second pass, check for zero
+                for item in self.inputs:
+                    if (item.source.value == 0):
+                        totalEMC = 0
                 
                 # make sure we can set the value cleanly
                 fVal:float = float(totalEMC) / float(self.output.count)

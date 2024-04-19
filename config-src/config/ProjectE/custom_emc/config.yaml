@@ -1,4 +1,4 @@
-basemult: 6 # this is documentation and not used by the program
+basemult: 1440 # this is documentation and not used by the program
 customRecipes: [] # none
 values:
     # normal ones that are handed to the resolver
@@ -7,17 +7,45 @@ values:
         explicit:
             -
                 bep: '<item:minecraft:coal>'
-                value: 768
+                value: 184320
+            -
+                bep: '<item:minecraft:cobblestone>'
+                value: 1440
             -
                 bep: '<item:minecraft:diamond>'
-                value: 49152
+                value: 11796480
+            -
+                bep: '<item:minecraft:flint>'
+                value: 5760
             -
                 bep:   '<item:minecraft:oak_wood>'
-                value: 384
+                value: 92160
         equivalent:
+            -
+                bep: '<item:minecraft:cobblestone>'
+                children:
+                    - '<item:minecraft:acacia_leaves>'
+                    - '<item:minecraft:birch_leaves>'
+                    - '<item:minecraft:dark_oak_leaves>'
+                    - '<item:minecraft:dead_bush>'
+                    - '<item:minecraft:dirt>'
+                    - '<item:minecraft:fern>'
+                    - '<item:minecraft:ice>'
+                    - '<item:minecraft:jungle_leaves>'
+                    - '<item:minecraft:oak_leaves>'
+                    - '<item:minecraft:sand>'
+                    - '<item:minecraft:snow_block>'
+                    - '<item:minecraft:spruce_leaves>'
+                    - '<item:minecraft:stone>'
+                    - '<item:quark:marble>'
+                    # Tall Grass, Glass, Grass, Low Covalence Dust,
+                    # Mycelium, Netherrack,
+                    # Basalt, Basalt Brick, Basalt Cobblestone,
+                    # Marble, Marble Brick, End Stone
             -
                 bep: '<item:minecraft:oak_wood>'
                 children:
+                    - '<item:minecraft:burch_wood>'
                     - '<item:minecraft:spruce_wood>'
                     - '<item:minecraft:jungle_wood>'
                     - '<item:minecraft:acacia_wood>'
