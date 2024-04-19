@@ -7,6 +7,7 @@ function ee_remove_main() as void
 {
     # list of all the items we want to remove, as an array.
     var itemsToRemove = [
+        <item:emendatusenigmatica:enigmatic_fortunizer>,
         <item:emendatusenigmatica:iron_gear>,
         <item:emendatusenigmatica:gold_gear>,
         <item:emendatusenigmatica:diamond_gear>,
