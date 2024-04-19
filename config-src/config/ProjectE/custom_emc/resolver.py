@@ -18,6 +18,7 @@ class IngredientBase():
         self.bep:str = ""
         self.hasValue:bool = False
         self.value:int = -1
+        self.consumed:bool = True
         
         self.listeners:list[UpdateListener] = []
     
@@ -176,13 +177,13 @@ class Recipe(UpdateListener):
         ret:bool = True
         
         for inItem in self.inputs:
-            if (not inItem.source.hasValue):
+            if ((not inItem.source.hasValue) and (inItem.source.consumed)):
                 ret = False
         
         # second pass, check for zeroes
         for inItem in self.inputs:
             if (inItem.source.hasValue):
-                if (inItem.source.value == 0):
+                if ((inItem.source.value == 0) and (inItem.source.consumed)):
                     ret = True
         
         return ret
@@ -199,7 +200,7 @@ class Recipe(UpdateListener):
         # two, must have exactly one input without a value
         unValuedInputs:int = 0
         for inItem in self.inputs:
-            if (not inItem.source.hasValue):
+            if ((not inItem.source.hasValue) and (inItem.source.consumed)):
                 unValuedInputs = unValuedInputs + 1
         if (unValuedInputs != 1):
             ret = False
@@ -219,13 +220,13 @@ class Recipe(UpdateListener):
             # total up the inputs
             accountedEMC:int = 0
             for inItem in self.inputs:
-                if (inItem.source.hasValue):
+                if ((inItem.source.hasValue) and (inItem.source.consumed)):
                     accountedEMC = accountedEMC + (inItem.count * inItem.source.value)
                     
             # find the ingredient without EMC
             unAccountedItem:Ingredient = Ingredient()
             for inItem in self.inputs:
-                if (not inItem.source.hasValue):
+                if ((not inItem.source.hasValue) and (inItem.source.consumed)):
                     unAccountedItem = inItem
             
             # unaccounted for emc
@@ -250,11 +251,12 @@ class Recipe(UpdateListener):
             totalEMC:int = 0
             
             for item in self.inputs:
-                totalEMC = totalEMC + (item.source.value * item.count)
+                if item.source.consumed:
+                    totalEMC = totalEMC + (item.source.value * item.count)
             
             # second pass, check for zero
             for item in self.inputs:
-                if (item.source.value == 0):
+                if ((item.source.value == 0) and (item.source.consumed)):
                     totalEMC = 0
             
             # make sure we can set the value cleanly
@@ -333,6 +335,11 @@ class Resolver():
         with open(fpath) as recipeSrc:
             yaml=YAML()
             self.recipeDict = yaml.load(recipeSrc)
+
+    def parseConfigDict(self):
+        # TODO: Parse config recipes
+        for item in self.configDict["unconsumedItems"]:
+            self.getOrCreateItem(item).consumed = False
 
     def parseRecipeDict(self):
         for rawRecipe in tqdm.tqdm(self.recipeDict["recipes"]):
@@ -483,8 +490,11 @@ def main():
     
     print("Parsing recipe structure")
     resolver.parseRecipeDict()
+    print("done")
     
-    # TODO: Add config recipes
+    print("parsing config dict")
+    resolver.parseConfigDict()
+    print("done")
     
     print("Applying and propagating normal config values")
     resolver.applyNormalConfigValues()

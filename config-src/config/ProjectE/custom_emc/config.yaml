@@ -1,5 +1,11 @@
-basemult: 4320 # this is documentation and not used by the program
+basemult: 8640 # this is documentation and not used by the program
 customRecipes: [] # none
+unconsumedItems:
+    # items which are not consumed by being in a crafting recipe
+    # usually hammers, saws, philosopher's stone, etc
+    # these items get omitted from the crafted item's EMC value
+    - '<item:emendatusenigmatica:enigmatic_hammer>'
+    - '<item:projecte:philosophers_stone>'
 values:
     # normal ones that are handed to the resolver
     # just like the config for ProjectE
@@ -10,32 +16,28 @@ values:
                 value: 0
             -
                 bep: '<item:minecraft:coal>'
-                value: 552960
+                value: 4423680
             -
                 bep: '<item:minecraft:cobblestone>'
-                value: 4320
+                value: 34560
             -
                 bep: '<item:minecraft:diamond>'
-                value: 35389440
+                value: 283115520
             -
                 bep: '<item:minecraft:flint>'
-                value: 17280
-            -
-                # based on value of iron ingot * 6 / 16
-                bep:   '<item:minecraft:iron_bars>'
-                value: 414720
+                value: 138240
             -
                 bep:   '<item:minecraft:iron_ingot>'
-                value: 1105920
+                value: 8847360
             -
                 bep:   '<item:minecraft:oak_wood>'
-                value: 276480
+                value: 2211840
             -
                 bep:   '<item:minecraft:obsidian>'
-                value: 276480
+                value: 2211840
             -
                 bep:   '<item:minecraft:string>'
-                value: 51840
+                value: 414720
         equivalent:
             -
                 # base value 0
@@ -61,6 +63,7 @@ values:
                     - '<item:minecraft:spruce_leaves>'
                     - '<item:minecraft:stone>'
                     - '<item:quark:marble>'
+                    - '<tag:items:forge:stone>'
                     # Tall Grass, Glass, Grass, Low Covalence Dust,
                     # Mycelium, Netherrack,
                     # Basalt, Basalt Brick, Basalt Cobblestone,
@@ -90,6 +93,7 @@ values:
                     - '<item:zawa:large_meat>'
                     - '<item:zawa:medium_meat>'
                     - '<item:zawa:small_meat>'
+                    - '<tag:items:forge:dusts/redstone>'
             -
                 # Normally base value 256
                 bep: '<item:minecraft:iron_ingot>'
@@ -97,15 +101,50 @@ values:
                     - '<item:emedatusenigmatica:tin_ingot>'
                     - '<item:mekanism:ingot_tin>'
                     - '<item:projectred-core:tin_ingot>'
+                    - '<tag:items:forge:ingots/iron>'
+                    - '<tag:items:forge:ingots/tin>'
             -
                 # just woods
                 bep: '<item:minecraft:oak_wood>'
                 children:
-                    - '<item:minecraft:burch_wood>'
-                    - '<item:minecraft:spruce_wood>'
-                    - '<item:minecraft:jungle_wood>'
+                    - '<item:atmospheric:aspen_wood>'
+                    - '<item:atmospheric:crustose_wood>'
+                    - '<item:atmospheric:grimwood>'
+                    - '<item:atmospheric:kousa_wood>'
+                    - '<item:atmospheric:morado_wood>'
+                    - '<item:atmospheric:rosewood>'
+                    - '<item:atmospheric:watchful_aspen_wood>'
+                    - '<item:atmospheric:yucca_wood>'
+                    - '<item:autumnity:maple_wood>'
+                    - '<item:autumnity:sappy_maple_wood>'
+                    - '<item:environmental:cherry_wood>'
+                    - '<item:environmental:willow_wood>'
+                    - '<item:environmental:wisteria_wood>'
                     - '<item:minecraft:acacia_wood>'
+                    - '<item:minecraft:birch_wood>'
+                    - '<item:minecraft:crimson_hyphae>'
+                    - '<item:minecraft:crimson_stem>'
                     - '<item:minecraft:dark_oak_wood>'
+                    - '<item:minecraft:jungle_wood>'
+                    - '<item:minecraft:spruce_wood>'
+                    - '<item:minecraft:warped_hyphae>'
+                    - '<item:minecraft:warped_stem>'
+                    - '<tag:items:atmospheric:kousa_logs>'
+                    - '<tag:items:atmospheric:morado_logs>'
+                    - '<tag:items:autumnity:maple_logs>'
+                    - '<tag:items:environmental:willow_logs>'
+                    - '<tag:items:environmental:wisteria_logs>'
+                    - '<tag:items:minecraft:birch_logs>'
+                    - '<tag:items:minecraft:crimson_stems>'
+                    - '<tag:items:minecraft:dark_oak_logs>'
+                    - '<tag:items:minecraft:logs>'
+                    - '<tag:items:minecraft:oak_logs>'
+                    - '<tag:items:minecraft:spruce_logs>'
+            -
+                # late followup nonsense
+                bep: '<item:minecraft:stick>'
+                children:
+                    - '<tag:items:forge:rods/wooden>'
     # late ones don't propagate
     # a way to tweak singular values after the fact
     late: [] # none
