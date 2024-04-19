@@ -1,4 +1,4 @@
-basemult: 1440 # this is documentation and not used by the program
+basemult: 4320 # this is documentation and not used by the program
 customRecipes: [] # none
 values:
     # normal ones that are handed to the resolver
@@ -7,19 +7,19 @@ values:
         explicit:
             -
                 bep: '<item:minecraft:coal>'
-                value: 184320
+                value: 552960
             -
                 bep: '<item:minecraft:cobblestone>'
-                value: 1440
+                value: 4320
             -
                 bep: '<item:minecraft:diamond>'
-                value: 11796480
+                value: 35389440
             -
                 bep: '<item:minecraft:flint>'
-                value: 5760
+                value: 17280
             -
                 bep:   '<item:minecraft:oak_wood>'
-                value: 92160
+                value: 276480
         equivalent:
             -
                 bep: '<item:minecraft:cobblestone>'

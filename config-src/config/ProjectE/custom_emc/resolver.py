@@ -188,32 +188,87 @@ class Recipe(UpdateListener):
         return ret
     
     def isResolvableBackwards(self) -> bool:
-        # TODO: Write a reverse resolver function
-        return False
+        ret:bool = True
+        
+        # three major conditions for reverse resolution
+        
+        # one, must have output with a value
+        if (not self.output.source.hasValue):
+            ret = False
+
+        # two, must have exactly one input without a value
+        unValuedInputs:int = 0
+        for inItem in self.inputs:
+            if (not inItem.source.hasValue):
+                unValuedInputs = unValuedInputs + 1
+        if (unValuedInputs != 1):
+            ret = False
+        
+        # three, the output must not be worth zero
+        if (self.output.source.value == 0):
+            ret = False
+        
+        return ret
+
+    def resolveBackwards(self) -> None:
+        if (self.isResolvableBackwards()):
+            # okay, total up the outputs
+            totalEMC:int = 0
+            totalEMC = self.output.count * self.output.source.value
+            
+            # total up the inputs
+            accountedEMC:int = 0
+            for inItem in self.inputs:
+                if (inItem.source.hasValue):
+                    accountedEMC = accountedEMC + (inItem.count * inItem.source.value)
+                    
+            # find the ingredient without EMC
+            unAccountedItem:Ingredient = Ingredient()
+            for inItem in self.inputs:
+                if (not inItem.source.hasValue):
+                    unAccountedItem = inItem
+            
+            # unaccounted for emc
+            unAccountedEMC = totalEMC - accountedEMC
+            
+            # make sure we got a positive number that last step
+            sane:bool = True
+            if (unAccountedEMC < 1):
+                sane = False
+            
+            # try division, if it fails we can see what happens by raising it
+            if (sane):
+                fVal:float = float(unAccountedEMC) / float(unAccountedItem.count)
+                if (float(int(fVal)) == fVal):
+                    unAccountedItem.source.setValue(int(fVal))
+                else:
+                    raise ArithmeticError(f"Can't neatly divide EMC! {unAccountedEMC} / {unAccountedItem.count} (reversed resolution)")
+
+    def resolveForwards(self) -> None:
+        if (self.isResolvableForwards()):
+            # we just total up inputs...
+            totalEMC:int = 0
+            
+            for item in self.inputs:
+                totalEMC = totalEMC + (item.source.value * item.count)
+            
+            # second pass, check for zero
+            for item in self.inputs:
+                if (item.source.value == 0):
+                    totalEMC = 0
+            
+            # make sure we can set the value cleanly
+            fVal:float = float(totalEMC) / float(self.output.count)
+            if (float(int(fVal)) == fVal):
+                self.output.source.setValue(int(fVal))
+            else:
+                raise ArithmeticError(f"Can't neatly divide EMC! {totalEMC} / {self.output.count}")
 
     def update(self):
         if (not self.isUpdating):
             self.isUpdating = True
-            
-            if (self.isResolvableForwards()):
-                # we just total up inputs...
-                totalEMC = 0
-                
-                for item in self.inputs:
-                    totalEMC = totalEMC + (item.source.value * item.count)
-                
-                # second pass, check for zero
-                for item in self.inputs:
-                    if (item.source.value == 0):
-                        totalEMC = 0
-                
-                # make sure we can set the value cleanly
-                fVal:float = float(totalEMC) / float(self.output.count)
-                if (float(int(fVal)) == fVal):
-                    self.output.source.setValue(int(fVal))
-                else:
-                    raise ArithmeticError(f"Can't neatly divide EMC! {totalEMC} / {self.output.count}")
-            
+            self.resolveForwards()
+            self.resolveBackwards()
             self.isUpdating = False
 
 class Resolver():
