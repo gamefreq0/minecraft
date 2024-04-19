@@ -6,6 +6,9 @@ values:
     normal:
         explicit:
             -
+                bep: '<item:mekanism:hdpe_pellet>'
+                value: 0
+            -
                 bep: '<item:minecraft:coal>'
                 value: 552960
             -
@@ -18,10 +21,30 @@ values:
                 bep: '<item:minecraft:flint>'
                 value: 17280
             -
+                # based on value of iron ingot * 6 / 16
+                bep:   '<item:minecraft:iron_bars>'
+                value: 414720
+            -
+                bep:   '<item:minecraft:iron_ingot>'
+                value: 1105920
+            -
                 bep:   '<item:minecraft:oak_wood>'
                 value: 276480
+            -
+                bep:   '<item:minecraft:obsidian>'
+                value: 276480
+            -
+                bep:   '<item:minecraft:string>'
+                value: 51840
         equivalent:
             -
+                # base value 0
+                bep: '<item:mekanism:hdpe_pellet>'
+                children:
+                    - 'botania:livingrock'
+                    - 'botania:livingwood'
+            -
+                # normally base value 1
                 bep: '<item:minecraft:cobblestone>'
                 children:
                     - '<item:minecraft:acacia_leaves>'
@@ -43,6 +66,39 @@ values:
                     # Basalt, Basalt Brick, Basalt Cobblestone,
                     # Marble, Marble Brick, End Stone
             -
+                # normally base value 12
+                bep: '<item:minecraft:string>'
+                children:
+                    - '<item:minecraft:cobweb>'
+            -
+                # normally base value 64
+                bep: '<item:minecraft:obsidian>'
+                children:
+                    - '<item:chococraft:chocobo_drumstick_raw>'
+                    - '<item:minecraft:beef>'
+                    - '<item:minecraft:chicken>'
+                    - '<item:minecraft:clay_ball>'
+                    - '<item:minecraft:cod>'
+                    - '<item:minecraft:leather>'
+                    - '<item:minecraft:porkchop>'
+                    - '<item:minecraft:pufferfish>'
+                    - '<item:minecraft:redstone>'
+                    - '<item:minecraft:salmon>'
+                    - '<item:minecraft:tropical_fish>'
+                    - '<item:zawa:angelfish>'
+                    - '<item:zawa:clownfish>'
+                    - '<item:zawa:large_meat>'
+                    - '<item:zawa:medium_meat>'
+                    - '<item:zawa:small_meat>'
+            -
+                # Normally base value 256
+                bep: '<item:minecraft:iron_ingot>'
+                children:
+                    - '<item:emedatusenigmatica:tin_ingot>'
+                    - '<item:mekanism:ingot_tin>'
+                    - '<item:projectred-core:tin_ingot>'
+            -
+                # just woods
                 bep: '<item:minecraft:oak_wood>'
                 children:
                     - '<item:minecraft:burch_wood>'
