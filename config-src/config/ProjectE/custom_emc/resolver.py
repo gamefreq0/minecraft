@@ -439,6 +439,17 @@ class Resolver():
                 unvaluedCount = unvaluedCount + 1
         
         print(f"{str(unvaluedCount).zfill(10)} items still unvalued")
+        
+        mostWanted:IngredientBase = IngredientBase()
+        for item in self.items.values():
+            if (len(item.listeners) > len(mostWanted.listeners)):
+                if (not item.hasValue):
+                    mostWanted = item
+        
+        print("")
+        print("most wanted item:")
+        print(f"{mostWanted.bep}")
+
         print("---------------------------------------------------------------")
         print("")
 
