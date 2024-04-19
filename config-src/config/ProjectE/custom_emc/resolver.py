@@ -416,11 +416,28 @@ class Resolver():
     
     def applyNormalConfigValues(self):
         for entry in self.configDict["values"]["normal"]["explicit"]:
-            self.getOrCreateItem(entry["bep"]).setValue(entry["value"])
+            if ("<item:" in entry["bep"]):
+                # item
+                self.getOrCreateItem(entry["bep"]).setValue(entry["value"])
+            else:
+                # tag
+                self.getOrCreateTag(entry["bep"]).setValue(entry["value"])
         for entry in self.configDict["values"]["normal"]["equivalent"]:
-            refItem:Item = self.getOrCreateItem(entry["bep"])
+            refObject:IngredientBase = IngredientBase()
+            
+            if ("<item:" in entry["bep"]):
+                # refobject is an item
+                refObject = self.getOrCreateItem(entry["bep"])
+            else:
+                # refobject is a tag
+                refObject = self.getOrCreateTag(entry["bep"])
             for child in entry["children"]:
-                self.getOrCreateItem(child).setValue(refItem.value)
+                if ("<item:" in child):
+                    # child is an item
+                    self.getOrCreateItem(child).setValue(refObject.value)
+                else:
+                    # child is a tag
+                    self.getOrCreateTag(child).setValue(refObject.value)
     
     def writeGraph(self, fpath):
         with open(fpath, "w") as graphFile:
