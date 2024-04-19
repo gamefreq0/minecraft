@@ -426,6 +426,22 @@ class Resolver():
         with open(fpath, "w") as graphFile:
             graphFile.write(self.graph())
 
+    def status(self):
+        print("")
+        print("---------------------------------------------------------------")
+        print("                       Status")
+        print("---------------------------------------------------------------")
+        print(f"{str(len(self.items)).zfill(10)} total items")
+        
+        unvaluedCount:int = 0
+        for item in self.items.values():
+            if (not item.hasValue):
+                unvaluedCount = unvaluedCount + 1
+        
+        print(f"{str(unvaluedCount).zfill(10)} items still unvalued")
+        print("---------------------------------------------------------------")
+        print("")
+
 def main():
     resolver:Resolver = Resolver()
     
@@ -448,6 +464,7 @@ def main():
     
     # TODO: Apply late config values
     
+    resolver.status()
     
 if (__name__ == "__main__"):
     main()
