@@ -6,7 +6,7 @@ unconsumedItems:
     - '<item:emendatusenigmatica:enigmatic_hammer>'
     - '<item:projecte:philosophers_stone>'
 values:
-    basemult: 34560
+    basemult: 311040
     # normal ones that are handed to the resolver
     # just like the config for ProjectE
     normal:
@@ -48,6 +48,9 @@ values:
                 bep:  '<item:minecraft:iron_ingot>'
                 value: 256
             -
+                bep: '<item:minecraft:lapis_lazuli>'
+                value: 864
+            -
                 bep:   '<item:minecraft:honeycomb>'
                 value: 16
             -
@@ -78,10 +81,10 @@ values:
                 # base value 0
                 bep: '<item:mekanism:hdpe_pellet>'
                 children:
-                    - '<item:appliedenergistics2:fluix_crystal>'
-                    - '<item:appliedenergistics2:purified_fluix_crystal>'
                     - '<item:appliedenergistics2:certus_quartz_crystal>'
+                    - '<item:appliedenergistics2:fluix_crystal>'
                     - '<item:appliedenergistics2:purified_certus_quartz_crystal>'
+                    - '<item:appliedenergistics2:purified_fluix_crystal>'
                     - '<item:botania:livingrock>'
                     - '<item:botania:livingwood>'
                     - '<item:doom:argent_energy>'
@@ -89,6 +92,23 @@ values:
                     - '<item:doom:invisiblesphere>'
                     - '<item:doom:megasphere>'
                     - '<item:doom:powersphere>'
+                    - '<item:emendatusenigmatica:certus_quartz_chunk>'
+                    - '<item:emendatusenigmatica:charged_certus_quartz_chunk>'
+                    - '<item:emendatusenigmatica:fluorite_chunk>'
+                    - '<item:mekanism:fluorite_gem>'
+                    - '<tag:items:forge:gems/fluorite>'
+            -
+                # items I chose to skip because they're unused
+                bep: '<item:mekanism:hdpe_pellet>'
+                children:
+                    - '<item:emendatusenigmatica:apatite_chunk>'
+                    - '<item:emendatusenigmatica:arcane_chunk>'
+                    - '<item:emendatusenigmatica:cinnabar_chunk>'
+                    - '<item:emendatusenigmatica:cobalt_chunk>'
+                    - '<item:emendatusenigmatica:dimensional_chunk>'
+                    - '<item:emendatusenigmatica:iridium_chunk>'
+                    - '<item:emendatusenigmatica:potassium_nitrate_chunk>'
+                    - '<item:emendatusenigmatica:sulfur_chunk>' # nah, you can use gunpowder and salt mate
             -
                 # normally base value 1
                 bep: '<item:minecraft:cobblestone>'
@@ -141,6 +161,7 @@ values:
                 bep: '<item:minecraft:obsidian>'
                 children:
                     - '<item:chococraft:chocobo_drumstick_raw>'
+                    - '<item:emendatusenigmatica:redstone_chunk>'
                     - '<item:fluxnetworks:flux_dust>'
                     - '<item:minecraft:beef>'
                     - '<item:minecraft:chicken>'
@@ -174,6 +195,11 @@ values:
                     - '<tag:items:forge:ingots/copper>'
                     - '<tag:items:forge:ingots/zinc>'
             -
+                # normally base value 128
+                bep: '<item:minecraft:coal>'
+                children:
+                    - '<item:emendatusenigmatica:coal_chunk>'
+            -
                 # normally base value 192
                 bep: '<item:minecraft:chorus_fruit>'
                 children:
@@ -183,11 +209,17 @@ values:
                 # Normally base value 256
                 bep: '<item:minecraft:iron_ingot>'
                 children:
-                    - '<item:emendatusenigmatica:iron_chunk>'
-                    - '<item:emendatusenigmatica:tin_chunk>'
                     - '<item:emedatusenigmatica:tin_ingot>'
+                    - '<item:emendatusenigmatica:bitumen_chunk>'
+                    - '<item:emendatusenigmatica:iron_chunk>'
+                    - '<item:emendatusenigmatica:quartz_chunk>'
+                    - '<item:emendatusenigmatica:tin_chunk>'
+                    - '<item:mapperbase:raw_bitumen>'
                     - '<item:mekanism:ingot_tin>'
+                    - '<item:minecraft:quartz>'
                     - '<item:projectred-core:tin_ingot>'
+                    - '<tag:items:forge:bitumen>'
+                    - '<tag:items:forge:gems/quartz>'
                     - '<tag:items:forge:ingots/iron>'
                     - '<tag:items:forge:ingots/tin>'
             -
@@ -205,6 +237,12 @@ values:
                     - '<tag:items:forge:ingots/lead>'
                     - '<tag:items:forge:ingots/osmium>'
                     - '<tag:items:forge:ingots/silver>'
+            -
+                # normally base value 864
+                bep: '<item:minecraft:lapis_lazuli>'
+                children:
+                    - '<item:emendatusenigmatica:lapis_chunk>'
+                    - '<tag:items:forge:gems/lapis>'
             -
                 # normally base value 1024
                 bep: '<item:minecraft:ender_pearl>'
