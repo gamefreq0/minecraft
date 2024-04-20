@@ -1,4 +1,3 @@
-basemult: 34560 # this is documentation and not used by the program, should match cobblestone
 customRecipes: [] # none
 unconsumedItems:
     # items which are not consumed by being in a crafting recipe
@@ -7,61 +6,73 @@ unconsumedItems:
     - '<item:emendatusenigmatica:enigmatic_hammer>'
     - '<item:projecte:philosophers_stone>'
 values:
+    basemult: 34560
     # normal ones that are handed to the resolver
     # just like the config for ProjectE
     normal:
-        explicit:
+        base:
             -
                 bep: '<item:emendatusenigmatica:copper_ingot>'
-                value: 2937600
+                value: 85
             -
                 bep: '<item:emendatusenigmatica:lead_ingot>'
-                value: 17694720
+                value: 512
             -
                 bep: '<item:emendatusenigmatica:uranium_ingot>'
-                value: 141557760
+                value: 4096
             -
                 bep: '<item:mekanism:hdpe_pellet>'
                 value: 0
             -
                 bep: '<item:minecraft:chorus_fruit>'
-                value: 6635520
+                value: 192
             -
                 bep: '<item:minecraft:coal>'
-                value: 4423680
+                value: 128
             -
                 bep: '<item:minecraft:cobblestone>'
-                value: 34560
+                value: 1
             -
                 bep: '<item:minecraft:diamond>'
-                value: 283115520
+                value: 8192
+            -
+                bep: '<item:minecraft:ender_pearl>'
+                value: 1024
             -
                 bep: '<item:minecraft:flint>'
-                value: 138240
+                value: 4
             -
                 bep: '<item:minecraft:gold_ingot>'
-                value: 70778880
+                value: 2048
             -
-                bep:   '<item:minecraft:iron_ingot>'
-                value: 8847360
-            -
-                bep:   '<item:minecraft:iron_nugget>'
-                value: 983040
+                bep:  '<item:minecraft:iron_ingot>'
+                value: 256
             -
                 bep:   '<item:minecraft:honeycomb>'
-                value: 552960
+                value: 16
             -
                 bep:   '<item:minecraft:oak_wood>'
-                value: 2211840
+                value: 32
             -
                 bep:   '<item:minecraft:obsidian>'
-                value: 2211840
+                value: 64
             -
                 bep:   '<item:minecraft:string>'
-                value: 414720
+                value: 12
             -
                 bep:    '<item:minecraft:sugar_cane>'
-                value:  1105920
+                value:  32
+        derived:
+            -
+                bep:  '<item:minecraft:gold_nugget>'
+                from: '<item:minecraft:gold_ingot>'
+                type: 'division'
+                value: 9
+            -
+                bep:  '<item:minecraft:iron_nugget>'
+                from: '<item:minecraft:iron_ingot>'
+                type: 'division'
+                value: 9
         equivalent:
             -
                 # base value 0
@@ -152,12 +163,16 @@ values:
                 bep: '<item:emendatusenigmatica:copper_ingot>'
                 children:
                     - '<item:create:copper_ingot>'
+                    - '<item:create:zinc_ingot>'
                     - '<item:emendatusenigmatica:aluminum_chunk>'
                     - '<item:emendatusenigmatica:copper_chunk>'
+                    - '<item:emendatusenigmatica:zinc_chunk>'
+                    - '<item:emendatusenigmatica:zinc_ingot>'
                     - '<item:mekanism:ingot_copper>'
                     - '<item:projectred-core:copper_ingot>'
                     - '<tag:items:forge:ingots/aluminum>'
                     - '<tag:items:forge:ingots/copper>'
+                    - '<tag:items:forge:ingots/zinc>'
             -
                 # normally base value 192
                 bep: '<item:minecraft:chorus_fruit>'
@@ -180,12 +195,40 @@ values:
                 bep: '<item:emendatusenigmatica:lead_ingot>'
                 children:
                     - '<item:emendatusenigmatica:lead_chunk>'
+                    - '<item:emendatusenigmatica:osmium_chunk>'
+                    - '<item:emendatusenigmatica:osmium_ingot>'
                     - '<item:emendatusenigmatica:silver_chunk>'
                     - '<item:emendatusenigmatica:silver_ingot>'
                     - '<item:mekanism:ingot_lead>'
+                    - '<item:mekanism:ingot_osmium>'
                     - '<item:projectred-core:silver_ingot>'
                     - '<tag:items:forge:ingots/lead>'
+                    - '<tag:items:forge:ingots/osmium>'
                     - '<tag:items:forge:ingots/silver>'
+            -
+                # normally base value 1024
+                bep: '<item:minecraft:ender_pearl>'
+                children:
+                    - '<item:emendatusenigmatica:emerald_chunk>'
+                    - '<item:emendatusenigmatica:emerald_gem>'
+                    - '<item:emendatusenigmatica:nickel_chunk>'
+                    - '<item:emendatusenigmatica:nickel_ingot>'
+                    - '<item:emendatusenigmatica:peridot_chunk>'
+                    - '<item:emendatusenigmatica:peridot_gem>'
+                    - '<item:emendatusenigmatica:ruby_chunk>'
+                    - '<item:emendatusenigmatica:ruby_gem>'
+                    - '<item:emendatusenigmatica:sapphire_chunk>'
+                    - '<item:emendatusenigmatica:sapphire_gem>'
+                    - '<item:minecraft:emerald>'
+                    - '<item:projectred-core:peridot>'
+                    - '<item:projectred-core:ruby>'
+                    - '<item:projectred-core:sapphire>'
+                    - '<tag:items:forge:ender_pearls>'
+                    - '<tag:items:forge:gems/emerald>'
+                    - '<tag:items:forge:gems/peridot>'
+                    - '<tag:items:forge:gems/ruby>'
+                    - '<tag:items:forge:gems/sapphire>'
+                    - '<tag:items:forge:ingots/nickel>'
             -
                 # Normally base value 2048
                 bep: '<item:minecraft:gold_ingot>'

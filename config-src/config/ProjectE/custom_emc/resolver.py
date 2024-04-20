@@ -422,13 +422,44 @@ class Resolver():
                 self.recipes.append(recipe)
     
     def applyNormalConfigValues(self):
-        for entry in self.configDict["values"]["normal"]["explicit"]:
+        for entry in self.configDict["values"]["normal"]["base"]:
+            val = entry["value"] * self.configDict["values"]["basemult"]
+            
             if ("<item:" in entry["bep"]):
                 # item
-                self.getOrCreateItem(entry["bep"]).setValue(entry["value"])
+                self.getOrCreateItem(entry["bep"]).setValue(val)
             else:
                 # tag
-                self.getOrCreateTag(entry["bep"]).setValue(entry["value"])
+                self.getOrCreateTag(entry["bep"]).setValue(val)
+                
+        for entry in self.configDict["values"]["normal"]["derived"]:
+            # get value together
+            val = 0
+            if ("<item:" in entry["from"]):
+                val = self.getOrCreateItem(entry["from"]).value
+            else:
+                val = self.getOrCreateTag(entry["from"]).value
+            
+            if (entry["type"] == "division"):
+                swp = float(val)
+                swp = swp / entry["value"]
+                
+                if (float(int(swp)) == swp):
+                    val = int(swp)
+                else:
+                    raise ArithmeticError(f"Can't neatly divide EMC! {swp} / {entry['value']} (derived value)")
+            else:
+                #TODO: Implement other derivation methods
+                raise NotImplementedError(entry["type"])
+            
+            # Value finally together, set it
+            if ("<item:" in entry["bep"]):
+                # item
+                self.getOrCreateItem(entry["bep"]).setValue(val)
+            else:
+                # tag
+                self.getOrCreateTag(entry["bep"]).setValue(val)
+                
         for entry in self.configDict["values"]["normal"]["equivalent"]:
             refObject:IngredientBase = IngredientBase()
             
