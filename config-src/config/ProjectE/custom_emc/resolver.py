@@ -469,6 +469,10 @@ class Resolver():
             else:
                 # refobject is a tag
                 refObject = self.getOrCreateTag(entry["bep"])
+                
+            if (not refObject.hasValue):
+                raise ValueError(f"Tried to copy unvalued item! : {refObject.bep}")
+            
             for child in entry["children"]:
                 if ("<item:" in child):
                     # child is an item
