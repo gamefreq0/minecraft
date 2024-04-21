@@ -24,6 +24,9 @@ values:
                 bep: '<item:mekanism:hdpe_pellet>'
                 value: 0
             -
+                bep: '<item:minecraft:blaze_rod>'
+                value: 1536
+            -
                 bep: '<item:minecraft:chorus_fruit>'
                 value: 192
             -
@@ -65,6 +68,9 @@ values:
             -
                 bep:    '<item:minecraft:sugar_cane>'
                 value:  32
+            -
+                bep:    '<item:minecraft:wheat>'
+                value:  24
         derived:
             -
                 bep:  '<item:minecraft:gold_nugget>'
@@ -87,6 +93,7 @@ values:
                     - '<item:appliedenergistics2:purified_fluix_crystal>'
                     - '<item:botania:livingrock>'
                     - '<item:botania:livingwood>'
+                    - '<item:botania:pixie_dust>'
                     - '<item:doom:argent_energy>'
                     - '<item:doom:inmortalsphere>'
                     - '<item:doom:invisiblesphere>'
@@ -96,7 +103,11 @@ values:
                     - '<item:emendatusenigmatica:charged_certus_quartz_chunk>'
                     - '<item:emendatusenigmatica:fluorite_chunk>'
                     - '<item:mekanism:fluorite_gem>'
+                    - '<tag:items:appliedenergistics2:crystals/fluix>'
+                    - '<tag:items:botania:livingrock>'
+                    - '<tag:items:botania:livingwood>'
                     - '<tag:items:forge:gems/fluorite>'
+                    - '<tag:items:minecraft:coals>' # because the coals are multiple values, including zero
             -
                 # items I chose to skip because they're unused
                 bep: '<item:mekanism:hdpe_pellet>'
@@ -130,6 +141,8 @@ values:
                     - '<item:minecraft:spruce_leaves>'
                     - '<item:minecraft:stone>'
                     - '<item:quark:marble>'
+                    - '<tag:items:appliedenergistics2:glass>' # I believe this is the least value among the entries
+                    - '<tag:items:forge:glass>' # I believe this is the least value among the entries
                     - '<tag:items:forge:stone>'
                     - '<tag:items:minecraft:sand>'
                     # Tall Grass, Glass, Grass, Low Covalence Dust,
@@ -150,6 +163,13 @@ values:
                     - '<item:minecraft:lily_pad>'
                     - '<item:quark:tallow>'
                     - '<tag:items:buzzier_bees:candle_base>'
+            -
+                # normally base value 24
+                bep:    '<item:minecraft:wheat>'
+                children:
+                    - '<item:minecraft:nether_wart>'
+                    - '<item:minecraft:rotten_flesh>'
+                    - '<item:minecraft:slime_ball>'
             -
                 # normally 256/9 - 28.4 - probably not many of these
                 bep: '<item:minecraft:iron_nugget>'
@@ -238,6 +258,14 @@ values:
                     - '<tag:items:forge:ingots/osmium>'
                     - '<tag:items:forge:ingots/silver>'
             -
+                # Base value 768? 3x Iron Ingot
+                bep: '<item:mapperbase:steel_ingot>'
+                children:
+                    - '<item:emendatusenigmatica:steel_ingot>'
+                    - '<item:mekanism:ingot_steel>'
+                    - '<tag:items:forge:ingots/steel>'
+                
+            -
                 # normally base value 864
                 bep: '<item:minecraft:lapis_lazuli>'
                 children:
@@ -267,6 +295,11 @@ values:
                     - '<tag:items:forge:gems/ruby>'
                     - '<tag:items:forge:gems/sapphire>'
                     - '<tag:items:forge:ingots/nickel>'
+            -
+                # normally base value 1536
+                bep: '<item:minecraft:blaze_rod>'
+                children:
+                    - '<item:minecraft:glowstone>'
             -
                 # Normally base value 2048
                 bep: '<item:minecraft:gold_ingot>'
